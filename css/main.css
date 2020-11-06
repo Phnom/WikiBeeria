@@ -14,7 +14,6 @@
 }
 .beer-random-content > button {
     align-self: flex-end;
-    justify-self: flex-end;
 }
 .beer-random > h1 {
     font-weight: 400;
