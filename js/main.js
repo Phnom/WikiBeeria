@@ -3,7 +3,7 @@ const beerUrl = 'https://api.punkapi.com/v2/beers/';
 document.querySelector('.form > button').addEventListener('click', function () {
   const randomCard = document.querySelector('.beer-random-card');
   const mainContent = document.querySelector('.main-content');
-  if (randomCard.classList === 'active') {
+  if (randomCard.classList.contains('active')) {
     randomCard.classList.remove('active');
     mainContent.classList.add('active');
   }
