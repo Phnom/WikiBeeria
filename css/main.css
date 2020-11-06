@@ -1,0 +1,45 @@
+.beer-random {
+    display: none;
+    background: #E5FCC2;
+    margin: 0 auto;
+    width: 20vw;
+    height: 50vh;
+    border-radius: 5%;
+}
+.beer-random-content {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    height: 50%;
+}
+.beer-random-content > button {
+    align-self: flex-end;
+    justify-self: flex-end;
+}
+.beer-random > h1 {
+    font-weight: 400;
+}
+.beer-list {
+    display: none;
+}
+.active {
+    display: block;
+}
+header {
+    height: 20vh;
+    background-color: #0299be;
+}
+main {
+    height: 80vh;
+    background: #0190b4;
+}
+.img-random {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+} 
+.img-random > img {
+    margin: 0 auto;
+    height: 25vh;
+}
