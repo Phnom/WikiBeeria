@@ -39,7 +39,6 @@ main {
 }
 .beer-random-card-content > button {
     align-self: flex-end;
-    justify-self: flex-end;
 }
 .beer-random-card-content > h1 {
     font-size: 1rem;
