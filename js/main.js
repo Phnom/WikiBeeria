@@ -71,6 +71,11 @@ function createSearchResult(beer) {
   card.className = "card"
   cardWrapper.append(card)
 
+  const cardImgWrapper = document.createElement("div")
+  cardImgWrapper.className = "card-img-wrapper"
+  card.append(cardImgWrapper)
+
+
   const cardImg = document.createElement("img")
   cardImg.className = "card-img"
   cardImg.src = beer.image_url
@@ -81,7 +86,7 @@ function createSearchResult(beer) {
     cardImg.className = "card-img missing"
   }
 
-  card.append(cardImg)
+  cardImgWrapper.append(cardImg)
 
   const cardContent = document.createElement("div")
   cardContent.className = "card-content"
