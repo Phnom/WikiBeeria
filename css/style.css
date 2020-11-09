@@ -167,9 +167,5 @@ main {
 
 .beer-details-description {
 	border-left: 1px solid rgba(45, 41, 38, 0.1);
+	border-right: 1px solid rgba(45, 41, 38, 0.1);
 }
-
-.beer-details-stats {
-	border-left: 1px solid rgba(45, 41, 38, 0.1);
-}
-

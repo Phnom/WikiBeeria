@@ -143,6 +143,16 @@ function beerDetails(beer) {
     },
     {
       "element": "div",
+      "addClassName": "beer-details-img",
+      "appendTo": "beer-details",
+    },
+    {
+      "element": "div",
+      "addClassName": "beer-details-description",
+      "appendTo": "beer-details",
+    },
+    {
+      "element": "div",
       "addClassName": "beer-details-ingredients",
       "appendTo": "beer-details",
     },
@@ -150,7 +160,7 @@ function beerDetails(beer) {
       "element": "div",
       "addClassName": "beer-details-ingredients-hops",
       "appendTo": "beer-details-ingredients",
-    }, 
+    },
     {
       "element": "h3",
       "addClassName": "Ingredients-for-hops-headline",
@@ -194,16 +204,6 @@ function beerDetails(beer) {
       "addClassName": "Ingredients-for-yeasts-ul",
       "appendTo": "beer-details-ingredients-yeasts",
     },
-    {
-      "element": "div",
-      "addClassName": "beer-details-description",
-      "appendTo": "beer-details",
-    },
-    {
-      "element": "div",
-      "addClassName": "beer-details-stats",
-      "appendTo": "beer-details",
-    },
   ]
 
   // Calling the function "createHtmlStructure", that will render the layout to the page
@@ -227,14 +227,29 @@ function beerDetails(beer) {
   descriptI.innerHTML = `<h1>${beer.name}</h1><p>${beer.name}<p>${beer.abv}%</p><p>${beer.volume.value} ${beer.volume.unit}</p><p>${beer.brewers_tips}</p></p>`
 
 
-/*
 
-  beer.image_url
+  const img = document.querySelector(".beer-details-img")
+  img.innerHTML = `<img class="beer-details-image"></img>`
+  const addImg = document.querySelector(".beer-details-image")
+  addImg.src = beer.image_url
 
 
-  beer.food_pairing
 
-*/
+
+
+
+
+
+
+
+  /*
+  
+    beer.image_url
+  
+  
+    beer.food_pairing
+  
+  */
 
 
   function getIngredients(ingredients, nameOfUl) {
@@ -273,7 +288,7 @@ function createHtmlStructure(obj) {
 
   //Getting the the value of each item
   for (const key of obj) {
-    
+
     /* onödig kod
     const element = key.element;
     const addClassName = key.addClassName;
