@@ -58,7 +58,6 @@ async function searchForBeer() {
 
 function createSearchResult(beer) {
 
-
   //Shorten the beer description to fit inside the "card"-element
   shortenDescription = shorten(beer.description, 150, " ") + "..."
 
@@ -80,7 +79,7 @@ function createSearchResult(beer) {
   cardImg.className = "card-img"
   cardImg.src = beer.image_url
 
-  // Check if a beer-image exists, if not inserts generic img and giving it the class off missing
+  // Check if a beer-image exists, if not inserts generic img and giving it the class of missing
   if (cardImg.src == "http://127.0.0.1:5500/null") {
     cardImg.src = "img/missing.png"
     cardImg.className = "card-img missing"
