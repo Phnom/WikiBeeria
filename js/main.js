@@ -111,7 +111,16 @@ function createSearchResult(beer) {
   cardQuickfacts.append(cardQuickFactsPh)
 
   // Outputs the result inside <main>
+  card.addEventListener("click", () => {
+    renderBeerPage(beer)
+  })
   document.querySelector("main").append(cardWrapper)
+}
+
+/** Function for rendering beerPage*/
+
+function renderBeerPage(beer) {
+  clearMain()
 }
 
 
@@ -276,13 +285,15 @@ function createHtmlStructure(obj) {
 
   //Getting the the value of each item
   for (const key of obj) {
-
+    
+    /* onödig kod
     const element = key.element;
     const addClassName = key.addClassName;
     const appendTo = key.appendTo;
     const text = key.text;
+    */
 
-    renderTheHtml(element, addClassName, appendTo, text)
+    renderTheHtml(key.element, key.addClassName, key.appendTo, key.text)
   }
 
   // Function for rendering the html-structure
@@ -298,7 +309,6 @@ function createHtmlStructure(obj) {
       addText.innerHTML = text
     }
   }
-
 }
 
 

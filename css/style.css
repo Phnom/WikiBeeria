@@ -94,9 +94,10 @@ main {
 
 .card {
 	max-width: 800px;
-	min-width: 375px;
+	/*min-width: 375px;
 	width: 45%;
 	height: 225px;
+	*/
 	background-color: #fff;
 	overflow: hidden;
 	border-radius: 1vh;
@@ -126,12 +127,12 @@ main {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	flex-basis: 0;
 }
 .card-img {
 	/*
 	height: 70%;
 	margin: auto;
+
 	*/
 	max-width: 50%;
 }
