@@ -150,7 +150,7 @@ function beerDetails(beer) {
       "element": "div",
       "addClassName": "beer-details-ingredients-hops",
       "appendTo": "beer-details-ingredients",
-    },
+    }, 
     {
       "element": "h3",
       "addClassName": "Ingredients-for-hops-headline",
@@ -201,21 +201,6 @@ function beerDetails(beer) {
     },
     {
       "element": "div",
-      "addClassName": "beer-details-description",
-      "appendTo": "beer-details",
-    },
-    {
-      "element": "h1",
-      "addClassName": "beer-details-description-headline",
-      "appendTo": "beer-details",
-    },
-    {
-      "element": "p",
-      "addClassName": "beer-details-description-text",
-      "appendTo": "beer-details",
-    },
-    {
-      "element": "div",
       "addClassName": "beer-details-stats",
       "appendTo": "beer-details",
     },
@@ -239,6 +224,20 @@ function beerDetails(beer) {
   const maltsUl = document.querySelector(".Ingredients-for-malts-ul")
   getIngredients(malts, maltsUl)
 
+  const descriptI = document.querySelector(".beer-details-description")
+  descriptI.innerHTML = `<h1>${beer.name}</h1><p>${beer.name}<p>${beer.abv}%</p><p>${beer.volume.value} ${beer.volume.unit}</p><p>${beer.brewers_tips}</p></p>`
+
+
+/*
+
+
+
+  beer.image_url
+
+
+  beer.food_pairing
+
+*/
 
 
   function getIngredients(ingredients, nameOfUl) {
@@ -265,7 +264,6 @@ function beerDetails(beer) {
       addItemtoUl(ingredient, nameOfUl)
     }
   }
-
 }
 
 
