@@ -94,9 +94,10 @@ main {
 
 .card {
 	max-width: 800px;
+	height: 30vh;
 	/*min-width: 375px;
 	width: 45%;
-	height: 225px;
+
 	*/
 	background-color: #fff;
 	overflow: hidden;
@@ -104,6 +105,9 @@ main {
 	display: grid;
 	grid-template-columns: repeat(3, 20% 60% 20%);
 	box-shadow: 0 1px 6px 0 rgba(32, 33, 36, .28);
+}
+.card-content {
+	height: 100%;
 }
 
 .card:hover {
@@ -134,11 +138,26 @@ main {
 	margin: auto;
 
 	*/
+	max-width: 25%;
+}
+
+
+.beer-details-left-aside {
+	box-sizing: border-box;
+	display: flex;
+	justify-content: center;
+	align-items: start;
+	padding-top: 15%;
+}
+.beer-details-left-aside > img {
 	max-width: 50%;
 }
 
 .card-content	{
 	background-color: #fff;
+}
+.beer-details-ingredients {
+	padding: 0 10%;
 }
 
 .card-content-headline {
@@ -157,7 +176,6 @@ main {
 	border-radius: 1vh;
 	margin-top: 2vh;
 	width: 80vw;
-	height: 60vh;
 	box-shadow: 0 1px 6px 0 rgba(32, 33, 36, .28);
 }
 
