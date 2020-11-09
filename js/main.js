@@ -50,13 +50,6 @@ async function searchForBeer() {
   const fetch = query + searchInput
   let beer = await fetchBeerData(fetch)
 
-  if (isLightChecked === true) {
-    beer = beer.filter(beer => beer.ph < light)
-  } else if (isStrongChecked === true) {
-    beer = beer.filter(beer => beer.ph >= strong)
-  }
-
-
   for (let i = 0; i < beer.length; i++) {
     createSearchResult(beer[i])
   }
