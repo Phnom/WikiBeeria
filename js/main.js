@@ -143,7 +143,7 @@ function beerDetails(beer) {
     },
     {
       "element": "div",
-      "addClassName": "beer-details-img",
+      "addClassName": "beer-details-left-aside",
       "appendTo": "beer-details",
     },
     {
@@ -228,9 +228,10 @@ function beerDetails(beer) {
 
 
 
-  const img = document.querySelector(".beer-details-img")
-  img.innerHTML = `<img class="beer-details-image"></img>`
-  const addImg = document.querySelector(".beer-details-image")
+
+  const img = document.querySelector(".beer-details-left-aside")
+  img.innerHTML = `<img class="beer-details-left-aside-img"></img>`
+  const addImg = document.querySelector(".beer-details-left-aside-img")
   addImg.src = beer.image_url
 
 

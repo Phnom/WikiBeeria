@@ -161,8 +161,8 @@ main {
 	box-shadow: 0 1px 6px 0 rgba(32, 33, 36, .28);
 }
 
-.beer-details-ingredients {
-	padding: 1.2vh;
+.beer-details-left-aside-img {
+	width: 70%;
 }
 
 .beer-details-description {
