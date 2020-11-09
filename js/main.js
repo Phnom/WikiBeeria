@@ -219,7 +219,6 @@ function beerDetails(beer) {
   const hopsUl = document.querySelector(".Ingredients-for-hops-ul")
   getIngredients(hops, hopsUl)
 
-
   const malts = beer.ingredients.malt
   const maltsUl = document.querySelector(".Ingredients-for-malts-ul")
   getIngredients(malts, maltsUl)
@@ -229,8 +228,6 @@ function beerDetails(beer) {
 
 
 /*
-
-
 
   beer.image_url
 
