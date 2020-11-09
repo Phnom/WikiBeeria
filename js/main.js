@@ -112,17 +112,11 @@ function createSearchResult(beer) {
 
   // Outputs the result inside <main>
   card.addEventListener("click", () => {
-    renderBeerPage(beer)
+    clearMain()
+    beerDetails(beer)
   })
   document.querySelector("main").append(cardWrapper)
 }
-
-/** Function for rendering beerPage*/
-
-function renderBeerPage(beer) {
-  clearMain()
-}
-
 
 /**    function createSearchResult() ENDS */
 
@@ -132,7 +126,6 @@ async function drick() {
   let data = await response.json()
   data = data[0]
   beerDetails(data)
-
 }
 
 
