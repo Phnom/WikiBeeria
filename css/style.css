@@ -125,10 +125,6 @@ main {
 	height: 70%;
 }
 
-.missing {
-	-webkit-filter: blur(3px);
-}
-
 .card-content	{
 	background-color: #fff;
 }
