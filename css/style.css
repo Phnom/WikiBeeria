@@ -119,10 +119,21 @@ main {
 .card-content-description {
 	font-size: 0.9rem;
 }
-
+.card-img-wrapper {
+	height: 100%;
+	width: 100%;
+	box-sizing: border-box;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-basis: 0;
+}
 .card-img {
-	margin: auto;
+	/*
 	height: 70%;
+	margin: auto;
+	*/
+	max-width: 50%;
 }
 
 .card-content	{
