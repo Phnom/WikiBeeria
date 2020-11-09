@@ -1,6 +1,7 @@
 
-
-
+const hops = ["Fuggles", "First Gold", "Cascade", "Amarillo", "Simcoe", "Motueka", "Bramling Cross", "Centennial", "Saaz", "Nelson Sauvin", "Peppercorns", "Tomahawk", "Magnum", "Hersbrucker", "Honey", "Lactose", "Citra", "Columbus Extract", "Columbus", "Willamette", "Galena", "Hop Extract", "Chinook", "Mt.Hood", "Challenger", "Waimea", "Ahtanum", "Crystal", "Sorachi Ace", "Coffee", "HBC 369", "Dana", "Hallertauer Mittelfrüh", "Kohatu", "Blackberry Concentrate", "Sour Cherry Puree", "Mosaic", "CO2 Extract", "Goldings", "Bobek", "Ginger", "Orange Peel", "Mandarina Bavaria", "Coffee Beans", "Pacifica", "Pacific Jade", "Vic Secret"]
+const malt = ["Maris Otter Extra Pale", "Caramalt", "Munich", "Propino Pale Malt", "Wheat Malt", "Propino Pale Malt for kettle souring", "Acidulated Malt for kettle souring", "Extra Pale", "Dark Crystal", "Lager Malt", "Wheat", "Chocolate", "Carafa Special Malt Type 3", "Acidulated Malt", "Flaked Oats", "Crystal", "Peated Malt", "Amber", "Brown", "Crystal 150", "Pale Ale", "Smoked Weyermann", "Carafa Special Malt Type 1", "Dark Crystal 350-400", "Pale Ale - Tipple", "Extra Pale - Spring Blend", "Roasted Barley", "Smoked Malt", "Crystal 120", "Honey", "Rye", "Pale Crystal", "Weyermann Beech Smoked", "Popcorn", "Pale Chocolate", "Torrified Wheat", "Smoked Peaty", "Dextrose", "Black Malt", "Special W", "Dark Crystal 350", "Black Patent"]
+const yeast = ["Wyeast 1056 - American Ale™", "Wyeast 2007 - Pilsen Lager™", "Wyeast 3711 - French Saison™", "Wyeast 3522 - Belgian Ardennes™", "Saflager S189", "Wyeast 1272 - American Ale II™", "Wyeast 3333 - German Wheat™", "Wyeast 3638 - Bavarian Wheat™", "WLP500 - Monastery Ale", "Wyeast 1010 - American Wheat™", "WLP099 - Super High Gravity Ale", "Wyeast 3787 - Trappist High Gravity™"]
 /***********************
 
         API-fetch
@@ -13,10 +14,23 @@ async function fetchBeerData(query) {
   let data = await response.json()
   return data
 }
-
-
 // API-fetch ENDS //
 
+/*
+function för att leta data ta bort sen
+async function getBeer() {
+  const temp = []
+  const beers = await fetchBeerData("?per_page=80")
+  console.log(beers)
+  for (let current of beers) {
+    if (!yeast.includes(current.ingredients.yeast)) {
+        temp.push(current.ingredients.yeast)
+    }
+  }
+  console.log(temp)
+}
+getBeer()
+*/
 
 
 /***********************
