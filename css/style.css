@@ -1,0 +1,167 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+:root {
+	--black: #050505;
+	--white: #FFFFFF;
+	--green: #34D19E;
+	--gray: #ECECEC;
+}
+
+body {
+	width: 100%;
+	padding: 0;
+	background-color: var(--gray);
+	font-family: 'Space Mono', monospace;
+}
+
+header {
+	display: flex;
+  align-items: center;
+  justify-content: center;
+	height: 40vh;
+	width: 100vw;
+	overflow: hidden;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-image: url(https://picjumbo.com/wp-content/uploads/yummy-donuts-on-yellow-background-2210x1473.jpg);
+
+}
+
+
+a {
+	color: inherit;
+}
+
+ul {
+	list-style: none;
+}
+
+.hidden {
+	display: none;
+}
+
+.header-wrapper {
+	position: relative;
+	display: flex;
+  align-items: center;
+	justify-content: center;
+	min-width: 350px;
+	width: 100%;
+	height: 100%;
+	
+}
+
+.search-container {
+	display: flex;
+  align-items: center;
+	flex-flow: column nowrap;
+	width: 50%;
+	height: 60%;
+	
+}
+
+#search {
+	color: #000;
+	height: 50px;
+	width: 80%;
+	padding-left: 18px;
+	border-radius: 3vh;
+	outline: none;
+	box-shadow: 0 1px 6px 0 rgba(32, 33, 36, .28);
+	background-color: #fff;
+	border: 2px solid #fff;
+}
+
+main {
+	display: flex;
+  align-items: center;
+	justify-content: center;
+	flex-flow: column nowrap;
+}
+
+
+.card-wrapper {
+	display: flex;
+	justify-content: center;
+	margin-top: 2vh;
+	width: 80%;
+}
+
+.card {
+	max-width: 800px;
+	min-width: 375px;
+	width: 45%;
+	height: 225px;
+	background-color: #fff;
+	overflow: hidden;
+	border-radius: 1vh;
+	display: grid;
+	grid-template-columns: repeat(3, 20% 60% 20%);
+	box-shadow: 0 1px 6px 0 rgba(32, 33, 36, .28);
+}
+
+.card:hover {
+	transform: scale(1.03);
+	border: 1px solid var(--green);
+}
+
+.card-content-headline {
+	font-size: 1.2rem;
+	text-align: center;
+	word-break:break-word;
+}
+
+.card-content-description {
+	font-size: 0.9rem;
+}
+
+.card-img {
+	margin: auto;
+	height: 70%;
+}
+
+.missing {
+	-webkit-filter: blur(3px);
+}
+
+.card-content	{
+	background-color: #fff;
+}
+
+.card-content-headline {
+	margin-top: 10%;
+}
+
+.card-quickfacts	{
+	border-left: 1px solid rgba(45, 41, 38, 0.1);
+}
+
+
+.beer-details {
+	display: grid;
+	grid-template-columns: repeat(3, 20% 60% 20%);
+	background-color: #fff;
+	border-radius: 1vh;
+	margin-top: 2vh;
+	width: 80vw;
+	height: 60vh;
+	box-shadow: 0 1px 6px 0 rgba(32, 33, 36, .28);
+}
+
+.beer-details-ingredients {
+	padding: 1.2vh;
+}
+
+.beer-details-description {
+	border-left: 1px solid rgba(45, 41, 38, 0.1);
+}
+
+.beer-details-stats {
+	border-left: 1px solid rgba(45, 41, 38, 0.1);
+}
+

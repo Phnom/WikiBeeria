@@ -2,40 +2,31 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/main.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Punk IPA</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 </head>
+<header>
+    <form class="search-container">
+        <input id="search" type="text" autocomplete="off" form onsubmit="preventDefault(event)"
+            placeholder=" Find your beer..">
+        <div class="search-advanced hidden">
+            <input type="checkbox" id="strongbeer" name="strongbeer" value="4.4">
+            <label for="strongbeer">strongbeer</label>
+            <input type="checkbox" id="lightbeer" name="lightbeer" value="4.3">
+            <label for="lightbeer">lightbeer</label>
+        </div>
+    </form>
+    </div>
+</header>
 
 <body>
-    <div class="container">
-        <header>
-            <div class="form">
-                <input type="text" placeholder="Enter beer name...">
-                <button>Search</button>
-            </div>
-        </header>
-        <main>
-            <div class="beer-random-card active">
-                <div class="beer-random-card-img">
-                    <img src="" alt="">
-                </div>
-                <div class="beer-random-card-content">
-
-                </div>
-            </div>
-            <div class="main-content">
-                <div class="beer-info active">
-
-                </div>
-                <ul class="beer-list">
-                </ul>
-            </div>
- 
-        </main>
-    </div>
-    <script src="js/main.js"></script>
+    <main class="main">
+    </main>
+</body>
+<script src="js/main.js"></script>
 </body>
 
 </html>
