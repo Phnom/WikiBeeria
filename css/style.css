@@ -28,8 +28,13 @@ header {
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
-	background-image: url(https://picjumbo.com/wp-content/uploads/yummy-donuts-on-yellow-background-2210x1473.jpg);
+	background-image: url(https://www.brewdog.com/images/cms/blog/1462353293Malmo4.jpg);
 
+}
+
+header > img {
+	filter: blur(8px);
+  -webkit-filter: blur(8px);
 }
 
 
