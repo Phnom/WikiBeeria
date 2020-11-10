@@ -89,102 +89,50 @@ main {
 	display: flex;
 	justify-content: center;
 	margin-top: 2vh;
-	width: 80%;
 }
 
-.card {
-	max-width: 800px;
-	height: 30vh;
-	/*min-width: 375px;
-	width: 45%;
-
-	*/
-	background-color: #fff;
-	overflow: hidden;
-	border-radius: 1vh;
-	display: grid;
-	grid-template-columns: repeat(3, 20% 60% 20%);
-	box-shadow: 0 1px 6px 0 rgba(32, 33, 36, .28);
-}
-.card-content {
-	height: 100%;
-}
-
-.card:hover {
+.card-small:hover {
 	transform: scale(1.03);
 	border: 1px solid var(--green);
 }
 
-.card-content-headline {
-	font-size: 1.2rem;
-	text-align: center;
-	word-break:break-word;
-}
 
-.card-content-description {
-	font-size: 0.9rem;
-}
-.card-img-wrapper {
-	height: 100%;
-	width: 100%;
-	box-sizing: border-box;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-.card-img {
-	/*
-	height: 70%;
-	margin: auto;
-
-	*/
-
-	max-width: 25%;
-}
-
-
-.beer-details-left-aside {
-	box-sizing: border-box;
-	display: flex;
-	justify-content: center;
-	align-items: start;
-	padding-top: 15%;
-}
-.beer-details-left-aside > img {
-	max-width: 50%;
-}
-
-.card-content	{
-	background-color: #fff;
-}
-.beer-details-ingredients {
-	padding: 0 10%;
-}
-
-.card-content-headline {
-	margin-top: 10%;
-}
-
-.card-quickfacts	{
-	border-left: 1px solid rgba(45, 41, 38, 0.1);
-}
-
-
-.beer-details {
+.card {
 	display: grid;
 	grid-template-columns: repeat(3, 20% 60% 20%);
+	overflow: hidden;
 	background-color: #fff;
 	border-radius: 1vh;
-	margin-top: 2vh;
-	width: 80vw;
 	box-shadow: 0 1px 6px 0 rgba(32, 33, 36, .28);
 }
 
-.beer-details-left-aside-img {
-	width: 70%;
+.card-small {
+	width: 60%;
+	height: 300px;
 }
 
-.beer-details-description {
+.card-big {
+	margin-top: 2vh;
+	width: 80%;
+	height: 500px;
+}
+
+.card-content {
+	padding:10px 20px;
 	border-left: 1px solid rgba(45, 41, 38, 0.1);
 	border-right: 1px solid rgba(45, 41, 38, 0.1);
+}
+
+.card-left-aside {
+	display: grid;
+	justify-content: center;
+	padding-top: 20%;
+}
+
+.card-left-aside > img {
+	height: 70%;
+}
+
+.right-aside {
+	padding: 0 10%;
 }

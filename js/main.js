@@ -33,11 +33,8 @@ getBeer()
 */
 
 
-/***********************
 
-        EventListeners
 
- ***********************/
 
 document.getElementById("search").addEventListener("keypress", function (e) {
   if (e.key === "Enter") {
@@ -50,12 +47,7 @@ document.getElementById("search").addEventListener("keypress", function (e) {
 // EventListeners ENDS //
 
 
-/***********************
-
-        Functions
-
- ***********************/
-
+/*********************** Functions ***********************/
 
 async function searchForBeer() {
   searchInput = document.getElementById("search").value.toLowerCase();
@@ -72,64 +64,52 @@ async function searchForBeer() {
 
 function createSearchResult(beer) {
 
-  //Shorten the beer description to fit inside the "card"-element
-  shortenDescription = shorten(beer.description, 150, " ") + "..."
+  /** Html-structure **/
+  const main = document.querySelector("main")
 
   const cardWrapper = document.createElement("div")
   cardWrapper.className = "card-wrapper"
+  main.append(cardWrapper)
 
   const card = document.createElement("a")
   card.href = "#"
-  card.id = beer.id
-  card.className = "card"
+  card.className = "card card-small"
   cardWrapper.append(card)
 
-  const cardImgWrapper = document.createElement("div")
-  cardImgWrapper.className = "card-img-wrapper"
-  card.append(cardImgWrapper)
+  const leftAside = document.createElement("div")
+  leftAside.className = "card-left-aside"
+  card.append(leftAside)
 
+  const img = document.createElement("img")
+  img.className = "card-img"
+  leftAside.append(img)
 
-  const cardImg = document.createElement("img")
-  cardImg.className = "card-img"
-  cardImg.src = beer.image_url
+  const content = document.createElement("div")
+  content.className = "card-content"
+  card.append(content)
 
-  // Check if a beer-image exists, if not inserts generic img and giving it the class of missing
-  if (cardImg.src == "http://127.0.0.1:5500/null") {
-    cardImg.src = "img/missing.png"
-    cardImg.className = "card-img missing"
-  }
+  const headline = document.createElement("h1")
+  headline.className = "card-headline"
+  content.append(headline)
 
-  cardImgWrapper.append(cardImg)
+  const rightAside = document.createElement("div")
+  rightAside.className = "right-aside"
+  card.append(rightAside)
 
-  const cardContent = document.createElement("div")
-  cardContent.className = "card-content"
-  card.append(cardContent)
+  /** Html-structure  ends **/
 
-  const cardContentHeadline = document.createElement("h1")
-  cardContentHeadline.innerHTML = beer.name
-  cardContentHeadline.className = "card-content-headline"
-  cardContent.appendChild(cardContentHeadline)
+  //Shorten the beer description to fit inside the "card"-element
+  const shortenDescription = shorten(beer.description, 150, " ") + "..."
 
-  const cardContentDescription = document.createElement("p")
-  cardContentDescription.classList = "card-content-description"
-  cardContentDescription.innerHTML = shortenDescription
-  cardContent.appendChild(cardContentDescription)
+  // Add content
+  content.innerHTML = `<h1>${beer.name}</h1><p>${shortenDescription}<p>`
+  img.src = beer.image_url
 
-  const cardQuickfacts = document.createElement("div")
-  cardQuickfacts.className = "card-quickfacts"
-  card.append(cardQuickfacts)
-
-  const cardQuickFactsPh = document.createElement("p")
-  cardQuickFactsPh.className = "card-quickfacts-ph"
-  cardQuickFactsPh.innerHTML = beer.ph
-  cardQuickfacts.append(cardQuickFactsPh)
-
-  // Outputs the result inside <main>
   card.addEventListener("click", () => {
     clearMain()
     beerDetails(beer)
   })
-  document.querySelector("main").append(cardWrapper)
+
 }
 
 /**    function createSearchResult() ENDS */
@@ -144,124 +124,67 @@ async function drick() {
 
 
 
-
-
 function beerDetails(beer) {
 
-  //Object that holds the HTML-structure, that will be used to create the layout on the page
-  const htmlStructure = [
-    {
-      "element": "div",
-      "addClassName": "beer-details",
-      "appendTo": "main",
-    },
-    {
-      "element": "div",
-      "addClassName": "beer-details-left-aside",
-      "appendTo": "beer-details",
-    },
-    {
-      "element": "div",
-      "addClassName": "beer-details-description",
-      "appendTo": "beer-details",
-    },
-    {
-      "element": "div",
-      "addClassName": "beer-details-ingredients",
-      "appendTo": "beer-details",
-    },
-    {
-      "element": "div",
-      "addClassName": "beer-details-ingredients-hops",
-      "appendTo": "beer-details-ingredients",
-    },
-    {
-      "element": "h3",
-      "addClassName": "Ingredients-for-hops-headline",
-      "appendTo": "beer-details-ingredients-hops",
-      "text": "Hops:",
-    },
-    {
-      "element": "ul",
-      "addClassName": "Ingredients-for-hops-ul",
-      "appendTo": "beer-details-ingredients-hops",
-    },
-    {
-      "element": "div",
-      "addClassName": "beer-details-ingredients-malts",
-      "appendTo": "beer-details-ingredients",
-    },
-    {
-      "element": "h3",
-      "addClassName": "Ingredients-for-malts-headline",
-      "appendTo": "beer-details-ingredients-malts",
-      "text": "Malts:",
-    },
-    {
-      "element": "ul",
-      "addClassName": "Ingredients-for-malts-ul",
-      "appendTo": "beer-details-ingredients-malts",
-    },
-    {
-      "element": "div",
-      "addClassName": "beer-details-ingredients-yeasts",
-      "appendTo": "beer-details-ingredients",
-    },
-    {
-      "element": "h3",
-      "addClassName": "Ingredients-for-yeasts-headline",
-      "appendTo": "beer-details-ingredients-yeasts",
-      "text": "yeasts:",
-    },
-    {
-      "element": "ul",
-      "addClassName": "Ingredients-for-yeasts-ul",
-      "appendTo": "beer-details-ingredients-yeasts",
-    },
-  ]
+  /** Html-structure **/
 
-  // Calling the function "createHtmlStructure", that will render the layout to the page
-  createHtmlStructure(htmlStructure)
+  const main = document.querySelector("main")
+  const card = document.createElement("div")
+  card.className = "card card-big"
+  main.append(card)
 
+  const leftAside = document.createElement("div")
+  leftAside.className = "card-left-aside"
+  card.append(leftAside)
 
-  const yeasts = beer.ingredients.yeast
-  const yeastsUl = document.querySelector(".Ingredients-for-yeasts-ul")
-  getIngredients(yeasts, yeastsUl)
+  const img = document.createElement("img")
+  img.className = "card-img"
+  leftAside.append(img)
 
+  const content = document.createElement("div")
+  content.className = "card-content"
+  card.append(content)
+
+  const rightAside = document.createElement("div")
+  rightAside.className = "right-aside"
+  card.append(rightAside)
+
+  const CreateHopsUl = document.createElement("ul")
+  CreateHopsUl.className = "ingredients-hops"
+  rightAside.append(CreateHopsUl)
+
+  const CreateMaltsUl = document.createElement("ul")
+  CreateMaltsUl.className = "ingredients-malts"
+  rightAside.append(CreateMaltsUl)
+
+  const createYeastsUl = document.createElement("ul")
+  createYeastsUl.className = "ingredients-yeasts"
+  rightAside.append(createYeastsUl)
+
+  /** Html-structure  ends **/
 
   const hops = beer.ingredients.hops
-  const hopsUl = document.querySelector(".Ingredients-for-hops-ul")
+  const hopsUl = document.querySelector(".ingredients-hops")
   getIngredients(hops, hopsUl)
 
   const malts = beer.ingredients.malt
-  const maltsUl = document.querySelector(".Ingredients-for-malts-ul")
+  const maltsUl = document.querySelector(".ingredients-malts")
   getIngredients(malts, maltsUl)
 
-  const descriptI = document.querySelector(".beer-details-description")
-  descriptI.innerHTML = `<h1>${beer.name}</h1><p>${beer.name}<p>${beer.abv}%</p><p>${beer.volume.value} ${beer.volume.unit}</p><p>${beer.brewers_tips}</p></p>`
+  const yeasts = beer.ingredients.yeast
+  const yeastsUl = document.querySelector(".ingredients-hops")
+  getIngredients(yeasts, yeastsUl)
 
+  // Add content
+  content.innerHTML = `<h1>${beer.name}</h1><p>${beer.description}<p>${beer.abv}%</p><p>${beer.volume.value} ${beer.volume.unit}</p><p>${beer.brewers_tips}</p></p>`
 
-
-
-  const img = document.querySelector(".beer-details-left-aside")
-  img.innerHTML = `<img class="beer-details-left-aside-img"></img>`
-  const addImg = document.querySelector(".beer-details-left-aside-img")
-  addImg.src = beer.image_url
-
-
-
-
-
-
+  img.src = beer.image_url
 
 
 
 
   /*
-  
-    beer.image_url
-  
-  
+   
     beer.food_pairing
   
   */
@@ -295,40 +218,6 @@ function beerDetails(beer) {
 
 
 /**************** reusable functions  *****************/
-
-
-
-// Creates the HTML <elements> and then rendering it do the page.
-function createHtmlStructure(obj) {
-
-  //Getting the the value of each item
-  for (const key of obj) {
-
-    /* onödig kod
-    const element = key.element;
-    const addClassName = key.addClassName;
-    const appendTo = key.appendTo;
-    const text = key.text;
-    */
-
-    renderTheHtml(key.element, key.addClassName, key.appendTo, key.text)
-  }
-
-  // Function for rendering the html-structure
-  function renderTheHtml(element, addClassName, appendTo, text) {
-    const htmlElement = document.createElement(element)
-    htmlElement.className = addClassName
-    const add = document.querySelector(`.${appendTo}`)
-
-    add.append(htmlElement)
-
-    if (text != null) {
-      const addText = document.querySelector(`.${addClassName}`)
-      addText.innerHTML = text
-    }
-  }
-}
-
 
 // Adds <li>-items to a <ul>
 function addItemtoUl(item, nameOfUl) {
