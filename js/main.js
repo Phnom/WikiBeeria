@@ -210,7 +210,7 @@ async function searchForBeer() {
     query += `yeast=${yeastMenu.value.toLowerCase()}`;
   }
   if (query.length > 1) {
-    query += `per_page=80`;
+    query += `&per_page=80`;
   } else {
     query += `per_page=80`;
   }
@@ -235,7 +235,9 @@ function createSearchNav() {
     p.addEventListener("click", () => {
       clearMain()
       for (let j = 0; j < 10; j++) {
-        createSearchResult(lastSearch[(p.innerText-1)*10+j]);
+        if (lastSearch[(p.innerText-1)*10+j] !== undefined) {
+          createSearchResult(lastSearch[(p.innerText-1)*10+j]);
+        } 
       }
     })
   })
