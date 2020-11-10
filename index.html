@@ -15,11 +15,19 @@
         <form class="search-container">
             <input id="search" type="text" autocomplete="off" form onsubmit="preventDefault(event)"
                 placeholder=" Find your beer..">
-            <div class="search-advanced hidden">
-                <input type="checkbox" id="strongbeer" name="strongbeer" value="4.4">
-                <label for="strongbeer">strongbeer</label>
-                <input type="checkbox" id="lightbeer" name="lightbeer" value="4.3">
-                <label for="lightbeer">lightbeer</label>
+
+            
+            <div class="search-advanced">
+                <select  name="hops" id="hops">
+                    <option value="hops" selected>Hops</option>
+                </select>
+                <select  name="Malt" id="malt">
+                    <option value="malt" selected>Malt</option>
+                </select>
+                <select  name="Yeast" id="yeast">
+                    <option value="yeast" selected>Yeast</option>
+                </select>
+                
             </div>
         </form>
         </div>
