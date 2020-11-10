@@ -92,22 +92,6 @@ ul {
   flex-flow: column nowrap;
   padding: 20px;
   width: 70%;
-<<<<<<< Updated upstream
-  max-width: 900px;
-  background-color: rgba(255, 255, 255, 0.911);
-  border-radius: 0.25vh;
-}
-.search-btn {
-  align-self: flex-end;
-}
-.searchPageNav {
-  align-self: flex-start;
-  display: flex;
-}
-.searchPageNav > a {
-  margin: 10%;
-  cursor: pointer;
-=======
   max-width: 950px;
   height: 100%;
   background-color: rgba(255, 255, 255, 0.911);
@@ -125,7 +109,6 @@ ul {
 	margin: 10%;
 	cursor: pointer;
 	font-size: 0.9rem;
->>>>>>> Stashed changes
 }
 #search {
   color: #000;
