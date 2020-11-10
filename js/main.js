@@ -162,7 +162,16 @@ async function getBeer() {
 getBeer()
 */
 
+const searchBtn = document.querySelector('button');
+
+searchBtn.addEventListener('click', () => {
+  clearMain();
+  searchForBeer();
+});
+
 document.getElementById('search').addEventListener('keypress', function (e) {
+  // let searchInput = document.getElementById('search');
+  // const main = document.querySelector('main');
   if (e.key === 'Enter') {
     clearMain();
     searchForBeer();
@@ -183,24 +192,25 @@ async function searchForBeer() {
   if (searchInput.length > 0) {
     query += `beer_name=${searchInput}`;
   }
-  if (hopsMenu.value !== 'hops' && query.length > 1) {
-    query += `&hops=${hopsMenu.value}`;
+  if (hopsMenu.value.toLowerCase() !== 'hops' && query.length > 1) {
+    query += `&hops=${hopsMenu.value.toLowerCase()}`;
   } else if (hopsMenu.value !== 'hops') {
-    query += `hops=${searchInput}`;
+    query += `hops=${hopsMenu.value}`;
   }
 
-  if (maltMenu.value !== 'malt' && query.length > 1) {
-    query += `&malt=${maltMenu.value}`;
-  } else if (maltMenu.value !== 'malt') {
-    query += `malt=${searchInput}`;
+  if (maltMenu.value.toLowerCase() !== 'malt' && query.length > 1) {
+    query += `&malt=${maltMenu.value.toLowerCase()}`;
+  } else if (maltMenu.value.toLowerCase() !== 'malt') {
+    query += `malt=${maltMenu.value.toLowerCase()}`;
   }
-  if (yeastMenu.value !== 'yeast' && query.length > 1) {
-    query += `&yeast=${yeastMenu.value}`;
-  } else if (yeastMenu.value !== 'yeast') {
-    query += `yeast=${searchInput}`;
+  if (yeastMenu.value.toLowerCase() !== 'yeast' && query.length > 1) {
+    query += `&yeast=${yeastMenu.value.toLowerCase()}`;
+  } else if (yeastMenu.value.toLowerCase() !== 'yeast') {
+    query += `yeast=${yeastMenu.value.toLowerCase()}`;
   }
 
   let beer = await fetchBeerData(query);
+  console.log(query);
 
   for (let i = 0; i < beer.length; i++) {
     createSearchResult(beer[i]);
