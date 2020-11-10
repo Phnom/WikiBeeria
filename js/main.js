@@ -303,13 +303,22 @@ function beerDetails(beer) {
   CreateHopsUl.className = 'ingredients-hops';
   rightAside.append(CreateHopsUl);
 
+  const hopsHeadline = document.createElement("h3")
+  CreateHopsUl.append(hopsHeadline)
+
   const CreateMaltsUl = document.createElement('ul');
   CreateMaltsUl.className = 'ingredients-malts';
   rightAside.append(CreateMaltsUl);
 
+  const maltHeadline = document.createElement("h3")
+  CreateMaltsUl.append(maltHeadline)
+
   const createYeastsUl = document.createElement('ul');
   createYeastsUl.className = 'ingredients-yeasts';
   rightAside.append(createYeastsUl);
+
+  const yeastHeadline = document.createElement("h3")
+  createYeastsUl.append(yeastHeadline)
 
   /** Html-structure  ends **/
 
@@ -322,13 +331,17 @@ function beerDetails(beer) {
   getIngredients(malts, maltsUl);
 
   const yeasts = beer.ingredients.yeast;
-  const yeastsUl = document.querySelector('.ingredients-hops');
+  const yeastsUl = document.querySelector('.ingredients-yeasts');
   getIngredients(yeasts, yeastsUl);
 
   // Add content
   content.innerHTML = `<h1>${beer.name}</h1><p>${beer.description}<p>${beer.abv}%</p><p>${beer.volume.value} ${beer.volume.unit}</p><p>${beer.brewers_tips}</p></p>`;
 
   img.src = beer.image_url;
+
+  hopsHeadline.innerHTML = "Hops:"
+  maltHeadline.innerHTML = "Malt:"
+  yeastHeadline.innerHTML = "Yeast:"
 
   /*
    
