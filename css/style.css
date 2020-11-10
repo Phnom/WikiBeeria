@@ -88,14 +88,24 @@ ul {
 .search-container {
   display: flex;
   align-items: center;
+  justify-content: baseline;
   flex-flow: column nowrap;
-  padding: 40px;
+  padding: 20px;
   width: 70%;
-  height: 70%;
   background-color: rgba(255, 255, 255, 0.911);
   border-radius: 0.25vh;
 }
-
+.search-btn {
+	align-self: flex-end;
+}
+.searchPageNav {
+	align-self: flex-start;
+	display: flex;
+}
+.searchPageNav > a {
+	margin: 10%;
+	cursor: pointer;
+}
 #search {
   color: #000;
   height: 50px;

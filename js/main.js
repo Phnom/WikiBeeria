@@ -228,16 +228,16 @@ function createSearchNav() {
   const searchNav = document.querySelector(".searchPageNav")
   searchNav.innerHTML = ""
   for (let i = 0; i < Math.ceil(lastSearch.length/10); i++) {
-    searchNav.innerHTML += `<p>${i+1}</p>`
+    searchNav.innerHTML += `<a href="#">${i+1}</a>`
   }
-  const searchP = document.querySelectorAll(".searchPageNav > p")
-  searchP.forEach(p => {
-    p.addEventListener("click", () => {
+  const searchPagination = document.querySelectorAll(".searchPageNav > a")
+  searchPagination.forEach(pageLink => {
+    pageLink.addEventListener("click", () => {
       clearMain()
       for (let j = 0; j < 10; j++) {
         // if = bugfix blankt resultat på sista
-        if (lastSearch[(p.innerText-1)*10+j] !== undefined) {
-          createSearchResult(lastSearch[(p.innerText-1)*10+j]);
+        if (lastSearch[(pageLink.innerText-1)*10+j] !== undefined) {
+          createSearchResult(lastSearch[(pageLink.innerText-1)*10+j]);
         } 
       }
     })
