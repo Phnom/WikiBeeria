@@ -130,7 +130,8 @@ main {
 }
 
 .card-left-aside > img {
-	height: 70%;
+	height: 200px;
+	max-width: 100%;
 }
 
 .right-aside {
