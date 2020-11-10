@@ -105,6 +105,7 @@ const yeast = [
   'WLP099 - Super High Gravity Ale',
   'Wyeast 3787 - Trappist High Gravity™',
 ];
+let lastSearch = []
 
 // Dropdown menus
 function renderDropdowns() {
@@ -208,13 +209,36 @@ async function searchForBeer() {
   } else if (yeastMenu.value.toLowerCase() !== 'yeast') {
     query += `yeast=${yeastMenu.value.toLowerCase()}`;
   }
+  if (query.length > 1) {
+    query += `per_page=80`;
+  } else {
+    query += `per_page=80`;
+  }
 
   let beer = await fetchBeerData(query);
-  console.log(query);
+  lastSearch = beer
+  createSearchNav()
 
-  for (let i = 0; i < beer.length; i++) {
+  for (let i = 0; i < 10; i++) {
     createSearchResult(beer[i]);
   }
+}
+
+function createSearchNav() {
+  const searchNav = document.querySelector(".searchPageNav")
+  searchNav.innerHTML = ""
+  for (let i = 0; i < Math.ceil(lastSearch.length/10); i++) {
+    searchNav.innerHTML += `<p>${i+1}</p>`
+  }
+  const searchP = document.querySelectorAll(".searchPageNav p")
+  searchP.forEach(p => {
+    p.addEventListener("click", () => {
+      clearMain()
+      for (let j = 0; j < 10; j++) {
+        createSearchResult(lastSearch[(p.innerText-1)*10+j]);
+      }
+    })
+  })
 }
 
 function createSearchResult(beer) {
