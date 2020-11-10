@@ -12,26 +12,52 @@
 
 <body>
     <header>
+        <div class="image-container">
+            <img src="https://www.brewdog.com/images/cms/blog/1462353293Malmo4.jpg" alt="Beer tap" />
+          </div>
         <form class="search-container">
             <input id="search" type="text" autocomplete="off" form onsubmit="preventDefault(event)"
                 placeholder=" Find your beer..">
-                <button form onsubmit="preventDefault(event)">Search..</button>
+                
 
             
             <div class="search-advanced">
-                <select  name="hops" id="hops">
-                    <option value="hops" selected>Hops</option>
-                </select>
+               
+                    <select  name="hops" id="hops">
+                        <option value="hops" selected>Hops</option>
+                    </select>
+                    <select  name="abvLesser" id="abvLesser">
+                        <option value="abvLesser" selected>Abv lesser than:</option>
+                    </select>
+                   
+                
+                
+                    <select  name="brewedBefore" id="brewedBefore">
+                        <option value="brewedBefore" selected>Brewed before:</option>
+                    </select>
+                <br>
+               
                 <select  name="Malt" id="malt">
                     <option value="malt" selected>Malt</option>
                 </select>
+                <select  name="abvGreater" id="abvGreater">
+                    <option value="abvGreater" selected>Abv greater than:</option>
+                </select> 
+                <select  name="brewedAfter" id="brewedAfter">
+                    <option value="brewedAfter" selected>Brewed after:</option>
+                </select>
+                
                 <select  name="Yeast" id="yeast">
                     <option value="yeast" selected>Yeast</option>
                 </select>
-                <nav class="searchPageNav"></nav>
+                
+                
+                
             </div>
+            <nav class="searchPageNav"></nav>
+            <button class="search-btn" form onsubmit="preventDefault(event)">Search..</button>
         </form>
-        </div>
+        
     </header>
     <main class="main">
     </main>
