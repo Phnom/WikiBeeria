@@ -235,6 +235,7 @@ function createSearchNav() {
     p.addEventListener("click", () => {
       clearMain()
       for (let j = 0; j < 10; j++) {
+        // if = bugfix blankt resultat på sista
         if (lastSearch[(p.innerText-1)*10+j] !== undefined) {
           createSearchResult(lastSearch[(p.innerText-1)*10+j]);
         } 
