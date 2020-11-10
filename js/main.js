@@ -230,7 +230,7 @@ function createSearchNav() {
   for (let i = 0; i < Math.ceil(lastSearch.length/10); i++) {
     searchNav.innerHTML += `<p>${i+1}</p>`
   }
-  const searchP = document.querySelectorAll(".searchPageNav p")
+  const searchP = document.querySelectorAll(".searchPageNav > p")
   searchP.forEach(p => {
     p.addEventListener("click", () => {
       clearMain()
