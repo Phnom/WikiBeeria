@@ -404,7 +404,6 @@ function beerDetails(beer) {
   foodPairing(foods)
   function foodPairing(foods) {
     for (const food of foods) {
-      console.log(food);
       addItemtoUl(food, pairingUl)
     }
   }
@@ -417,7 +416,6 @@ function beerDetails(beer) {
     if (typeof ingredients == 'object') {
       // Iterating and then pushing every ingredient to "allIngredients"
       for (const ingredient of ingredients) {
-        console.log(ingredient);
         allIngredients.push(ingredient.name);
       }
     } else {
