@@ -1,3 +1,15 @@
+
+
+dropdowns för brewed.
+if för querys brewed
+
+tomt kort för tom sökning.
+
+info på stora ölkortet. foodparing. rubriker.
+active page 123
+
+rad 239 finns de en bättre lösning?
+
 # Beer Project
 ## Instruktioner
 Utse en gruppledare som forkar det här repot och bjuder in de andra som collaborators.

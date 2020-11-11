@@ -220,7 +220,9 @@ async function searchForBeer() {
   createSearchNav()
 
   for (let i = 0; i < 10; i++) {
-    createSearchResult(beer[i]);
+    if (beer[i] !== undefined) {
+      createSearchResult(beer[i]);
+    }
   }
 }
 
@@ -238,7 +240,7 @@ function createSearchNav() {
         // if = bugfix blankt resultat på sista
         if (lastSearch[(pageLink.innerText-1)*10+j] !== undefined) {
           createSearchResult(lastSearch[(pageLink.innerText-1)*10+j]);
-        } 
+        }
       }
     })
   })
