@@ -185,56 +185,53 @@ document.getElementById('search').addEventListener('keypress', function (e) {
 
 async function searchForBeer() {
   let searchInput = document.getElementById('search').value.toLowerCase();
-  const hopsMenu = document.querySelector('#hops');
-  const maltMenu = document.querySelector('#malt');
-  const yeastMenu = document.querySelector('#yeast');
-  const abvLessMenu = document.querySelector('#abvLesser');
-  const abvGreatMenu = document.querySelector('#abvGreater');
-  const brewedBeforeMenu = document.querySelector('#brewedBefore');
-  const brewedAfterMenu = document.querySelector('#brewedAfter');
+  const hopsMenu = document.querySelector('#hops').value.toLowerCase();
+  const maltMenu = document.querySelector('#malt').value.toLowerCase();
+  const yeastMenu = document.querySelector('#yeast').value.toLowerCase();
+  const abvLessMenu = document.querySelector('#abvLesser').value.toLowerCase();
+  const abvGreatMenu = document.querySelector('#abvGreater').value.toLowerCase();
+  const brewedBeforeMenu = document.querySelector('#brewedBefore').value.toLowerCase();
+  const brewedAfterMenu = document.querySelector('#brewedAfter').value.toLowerCase();
 
   let query = '?';
   if (searchInput.length > 0) {
     query += `beer_name=${searchInput}`;
   }
-  if (hopsMenu.value.toLowerCase() !== 'hops' && query.length > 1) {
-    query += `&hops=${hopsMenu.value.toLowerCase()}`;
-  } else if (hopsMenu.value !== 'hops') {
-    query += `hops=${hopsMenu.value}`;
+  if (hopsMenu !== 'hops' && query.length > 1) {
+    query += `&hops=${hopsMenu}`;
+  } else if (hopsMenu !== 'hops') {
+    query += `hops=${hopsMenu}`;
   }
-
-  if (maltMenu.value.toLowerCase() !== 'malt' && query.length > 1) {
-    query += `&malt=${maltMenu.value.toLowerCase()}`;
-  } else if (maltMenu.value.toLowerCase() !== 'malt') {
-    query += `malt=${maltMenu.value.toLowerCase()}`;
+  if (maltMenu !== 'malt' && query.length > 1) {
+    query += `&malt=${maltMenu}`;
+  } else if (maltMenu !== 'malt') {
+    query += `malt=${maltMenu}`;
   }
-  if (yeastMenu.value.toLowerCase() !== 'yeast' && query.length > 1) {
-    query += `&yeast=${yeastMenu.value.toLowerCase()}`;
-  } else if (yeastMenu.value.toLowerCase() !== 'yeast') {
-    query += `yeast=${yeastMenu.value.toLowerCase()}`;
+  if (yeastMenu !== 'yeast' && query.length > 1) {
+    query += `&yeast=${yeastMenu}`;
+  } else if (yeastMenu !== 'yeast') {
+    query += `yeast=${yeastMenu}`;
   }
-
-  if (abvLessMenu.value.toLowerCase() !== 'abvlesser' && query.length > 1) {
-    query += `&abv_lt=${abvLessMenu.value.toLowerCase()}`;
-  } else if (abvLessMenu.value.toLowerCase() !== 'abvlesser') {
-    query += `abv_lt=${abvLessMenu.value.toLowerCase()}`;
+  if (abvLessMenu !== 'abvlesser' && query.length > 1) {
+    query += `&abv_lt=${abvLessMenu}`;
+  } else if (abvLessMenu !== 'abvlesser') {
+    query += `abv_lt=${abvLessMenu}`;
   }
-  if (abvGreatMenu.value.toLowerCase() !== 'abvgreater' && query.length > 1) {
-    query += `&abv_gt=${abvGreatMenu.value.toLowerCase()}`;
-  } else if (abvGreatMenu.value.toLowerCase() !== 'abvgreater') {
-    query += `abv_gt=${abvGreatMenu.value.toLowerCase()}`;
+  if (abvGreatMenu !== 'abvgreater' && query.length > 1) {
+    query += `&abv_gt=${abvGreatMenu}`;
+  } else if (abvGreatMenu !== 'abvgreater') {
+    query += `abv_gt=${abvGreatMenu}`;
   }
-  if (brewedBeforeMenu.value.toLowerCase() !== 'brewedbefore' && query.length > 1) {
-    query += `&brewed_before=01-${brewedBeforeMenu.value.toLowerCase()}`;
-  } else if (brewedBeforeMenu.value.toLowerCase() !== 'brewedbefore') {
-    query += `brewed_before=01-${brewedBeforeMenu.value.toLowerCase()}`;
+  if (brewedBeforeMenu !== 'brewedbefore' && query.length > 1) {
+    query += `&brewed_before=01-${brewedBeforeMenu}`;
+  } else if (brewedBeforeMenu !== 'brewedbefore') {
+    query += `brewed_before=01-${brewedBeforeMenu}`;
   }
-  if (brewedAfterMenu.value.toLowerCase() !== 'brewedafter' && query.length > 1) {
-    query += `&brewed_after=01-${brewedAfterMenu.value.toLowerCase()}`;
-  } else if (brewedAfterMenu.value.toLowerCase() !== 'brewedafter') {
-    query += `brewed_after=01-${brewedAfterMenu.value.toLowerCase()}`;
+  if (brewedAfterMenu !== 'brewedafter' && query.length > 1) {
+    query += `&brewed_after=01-${brewedAfterMenu}`;
+  } else if (brewedAfterMenu !== 'brewedafter') {
+    query += `brewed_after=01-${brewedAfterMenu}`;
   }
-
   if (query.length > 1) {
     query += `&per_page=80`;
   } else {
