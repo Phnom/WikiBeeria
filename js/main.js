@@ -378,14 +378,17 @@ function beerDetails(beer) {
   /** Html-structure  ends **/
 
   const hops = beer.ingredients.hops;
-  const hopsUl = document.querySelector('.ingredients-hops');
+  const hopsUl = document.querySelector('.ingredients-hops')
+  hopsHeadline.innerHTML = "Hops:";
   getIngredients(hops, hopsUl);
 
   const malts = beer.ingredients.malt;
   const maltsUl = document.querySelector('.ingredients-malts');
+  maltHeadline.innerHTML = "Malt:"
   getIngredients(malts, maltsUl);
 
   const yeasts = beer.ingredients.yeast;
+  yeastHeadline.innerHTML = "Yeast:"
   const yeastsUl = document.querySelector('.ingredients-yeasts');
   getIngredients(yeasts, yeastsUl);
 
@@ -394,15 +397,17 @@ function beerDetails(beer) {
 
   img.src = beer.image_url;
 
-  hopsHeadline.innerHTML = "Hops:"
-  maltHeadline.innerHTML = "Malt:"
-  yeastHeadline.innerHTML = "Yeast:"
+  const foods = beer.food_pairing
+  const pairingUl = document.querySelector('.food-pairing')
 
-  /*
-   
-    beer.food_pairing
-  
-  */
+  // Adds recommended foods to <ul>
+  foodPairing(foods)
+  function foodPairing(foods) {
+    for (const food of foods) {
+      console.log(food);
+      addItemtoUl(food, pairingUl)
+    }
+  }
 
   function getIngredients(ingredients, nameOfUl) {
     // Temporary array for holding all ingredients
@@ -412,6 +417,7 @@ function beerDetails(beer) {
     if (typeof ingredients == 'object') {
       // Iterating and then pushing every ingredient to "allIngredients"
       for (const ingredient of ingredients) {
+        console.log(ingredient);
         allIngredients.push(ingredient.name);
       }
     } else {
