@@ -93,39 +93,63 @@ ul {
   padding: 20px;
   width: 70%;
   max-width: 950px;
+  max-height: 400px;
   height: 100%;
   background-color: rgba(255, 255, 255, 0.911);
   border-radius: 0.25vh;
 }
 .search-Navigations {
-	display: flex;
-	width: 100%;
-	justify-content: space-between;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
 }
 .searchPageNav {
-	display: flex;
+  display: flex;
 }
 .searchPageNav > a {
-	margin: 10%;
-	cursor: pointer;
-	font-size: 0.9rem;
+  margin: 10%;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.search-input {
+  display: flex;
+  width: 80%;
 }
 #search {
   color: #000;
   height: 50px;
   width: 80%;
   padding-left: 18px;
-  border-radius: 3vh;
+  border-radius: 0.5vh;
   outline: none;
   box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
   background-color: #fff;
   border: 2px solid #fff;
+  font-size: 0.9rem;
+}
+
+.btn {
+  height: 50px;
+  padding: 0 40px;
+  border-radius: 0.3vh;
+  margin-left: -5px;
+  color: #fff;
+  background-color: #008fbb;
+  box-shadow: 0px -1px 6px 0 rgba(32, 33, 36, 0.28);
+  border: none;
+  outline: none;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #007ea5;
 }
 select {
   width: 65%;
   margin: 5px;
 }
-
 
 .search-advanced {
   width: 70%;
