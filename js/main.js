@@ -214,24 +214,24 @@ async function searchForBeer() {
     query += `yeast=${yeastMenu.value.toLowerCase()}`;
   }
 
-  if (abvLessMenu.value.toLowerCase() !== 'abvLesser' && query.length > 1) {
+  if (abvLessMenu.value.toLowerCase() !== 'abvlesser' && query.length > 1) {
     query += `&abv_lt=${abvLessMenu.value.toLowerCase()}`;
-  } else if (abvLessMenu.value.toLowerCase() !== 'abvLesser') {
+  } else if (abvLessMenu.value.toLowerCase() !== 'abvlesser') {
     query += `abv_lt=${abvLessMenu.value.toLowerCase()}`;
   }
-  if (abvGreatMenu.value.toLowerCase() !== 'abvGreater' && query.length > 1) {
+  if (abvGreatMenu.value.toLowerCase() !== 'abvgreater' && query.length > 1) {
     query += `&abv_gt=${abvGreatMenu.value.toLowerCase()}`;
-  } else if (abvGreatMenu.value.toLowerCase() !== 'abvGreater') {
+  } else if (abvGreatMenu.value.toLowerCase() !== 'abvgreater') {
     query += `abv_gt=${abvGreatMenu.value.toLowerCase()}`;
   }
-  if (brewedBeforeMenu.value.toLowerCase() !== 'brewedBefore' && query.length > 1) {
+  if (brewedBeforeMenu.value.toLowerCase() !== 'brewedbefore' && query.length > 1) {
     query += `&brewed_before=${brewedBeforeMenu.value.toLowerCase()}`;
-  } else if (brewedBeforeMenu.value.toLowerCase() !== 'brewedBefore') {
+  } else if (brewedBeforeMenu.value.toLowerCase() !== 'brewedbefore') {
     query += `brewed_before=${brewedBeforeMenu.value.toLowerCase()}`;
   }
-  if (brewedAfterMenu.value.toLowerCase() !== 'brewedAfter' && query.length > 1) {
+  if (brewedAfterMenu.value.toLowerCase() !== 'brewedafter' && query.length > 1) {
     query += `&brewed_after=${brewedAfterMenu.value.toLowerCase()}`;
-  } else if (brewedAfterMenu.value.toLowerCase() !== 'brewedAfter') {
+  } else if (brewedAfterMenu.value.toLowerCase() !== 'brewedafter') {
     query += `brewed_after=${brewedAfterMenu.value.toLowerCase()}`;
   }
 

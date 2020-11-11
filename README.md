@@ -1,13 +1,14 @@
 
 
 dropdowns för brewed.
-if för querys brewed
 
-tomt kort för tom sökning.
+if för querys brewed - anpassa till datum 
+
 
 info på stora ölkortet. foodparing. rubriker.
 active page 123
 
+tomt kort för tom sökning.
 rad 239 finns de en bättre lösning?
 
 # Beer Project
