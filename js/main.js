@@ -190,8 +190,8 @@ async function searchForBeer() {
   const yeastMenu = document.querySelector('#yeast');
   const abvLessMenu = document.querySelector('#abvLesser');
   const abvGreatMenu = document.querySelector('#abvGreater');
-  const brewedBeforeMenu = document.querySelector('#brewedBefore');
-  const brewedAfterMenu = document.querySelector('#brewedAfter');
+  /*const brewedBeforeMenu = document.querySelector('#brewedBefore');
+  const brewedAfterMenu = document.querySelector('#brewedAfter');*/
 
   let query = '?';
   if (searchInput.length > 0) {
@@ -224,6 +224,7 @@ async function searchForBeer() {
   } else if (abvGreatMenu.value.toLowerCase() !== 'abvgreater') {
     query += `abv_gt=${abvGreatMenu.value.toLowerCase()}`;
   }
+  /*
   if (brewedBeforeMenu.value.toLowerCase() !== 'brewedbefore' && query.length > 1) {
     query += `&brewed_before=${brewedBeforeMenu.value.toLowerCase()}`;
   } else if (brewedBeforeMenu.value.toLowerCase() !== 'brewedbefore') {
@@ -234,6 +235,7 @@ async function searchForBeer() {
   } else if (brewedAfterMenu.value.toLowerCase() !== 'brewedafter') {
     query += `brewed_after=${brewedAfterMenu.value.toLowerCase()}`;
   }
+  */
 
   if (query.length > 1) {
     query += `&per_page=80`;
