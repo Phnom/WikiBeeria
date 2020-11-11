@@ -15,7 +15,7 @@
 
 body {
   width: 100%;
-  padding: 0;
+  padding-top: 20px;
   background-color: var(--gray);
   font-family: 'Space Mono', monospace;
 }
@@ -223,6 +223,9 @@ main {
   padding: 0 10%;
 }
 @media screen and (max-width: 400px) {
+  body {
+    padding-top: 0;
+  }
   .image-container {
     display: none;
   }
@@ -253,7 +256,9 @@ main {
     border: none;
     font-size: 0.5em;
     height: 110px;
+    text-align: center;
   }
+
 
   .card-content .card-content {
     border-radius: 0;

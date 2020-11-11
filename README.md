@@ -1,15 +1,18 @@
-
-
-dropdowns för brewed.
-
-if för querys brewed - anpassa till datum 
-
-
-info på stora ölkortet. foodparing. rubriker.
-active page 123
+404 vid start? ibland
 
 tomt kort för tom sökning.
 rad 239 finns de en bättre lösning?
+
+bilden topp större?
+
+active page 123
+
+mobilanpassa ölsidan
+
+alt. bild vid saknad bild
+
+
+
 
 # Beer Project
 ## Instruktioner
