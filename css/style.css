@@ -192,7 +192,6 @@ main {
   max-width: 700px;
   width: 60vw;
   height: 300px;
-
 }
 
 .card-big {
@@ -220,4 +219,7 @@ main {
 
 .right-aside {
   padding: 0 10%;
+}
+
+@media screen and (max-width: 400px) {
 }
