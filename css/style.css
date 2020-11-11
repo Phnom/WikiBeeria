@@ -172,7 +172,7 @@ main {
 .card-big {
   margin-top: 2vh;
   width: 80%;
-  height: 500px;
+  min-height: 550px;
 }
 
 .card-content {

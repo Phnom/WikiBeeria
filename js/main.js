@@ -255,8 +255,8 @@ async function searchForBeer() {
 function createSearchNav() {
   const searchNav = document.querySelector(".searchPageNav")
   searchNav.innerHTML = ""
-  for (let i = 0; i < Math.ceil(lastSearch.length/10); i++) {
-    searchNav.innerHTML += `<a href="#">${i+1}</a>`
+  for (let i = 0; i < Math.ceil(lastSearch.length / 10); i++) {
+    searchNav.innerHTML += `<a href="#">${i + 1}</a>`
   }
   const searchPagination = document.querySelectorAll(".searchPageNav > a")
   searchPagination.forEach(pageLink => {
@@ -264,8 +264,8 @@ function createSearchNav() {
       clearMain()
       for (let j = 0; j < 10; j++) {
         // if = bugfix blankt resultat på sista
-        if (lastSearch[(pageLink.innerText-1)*10+j] !== undefined) {
-          createSearchResult(lastSearch[(pageLink.innerText-1)*10+j]);
+        if (lastSearch[(pageLink.innerText - 1) * 10 + j] !== undefined) {
+          createSearchResult(lastSearch[(pageLink.innerText - 1) * 10 + j]);
         }
       }
     })
@@ -390,7 +390,7 @@ function beerDetails(beer) {
   getIngredients(yeasts, yeastsUl);
 
   // Add content
-  content.innerHTML = `<h1>${beer.name}</h1><p>${beer.description}<p>${beer.abv}%</p><p>${beer.volume.value} ${beer.volume.unit}</p><p>${beer.brewers_tips}</p></p>`;
+  content.innerHTML = `<h1>${beer.name}</h1><p>${beer.description}<p><strong>Volume:</strong>${beer.volume.value} ${beer.volume.unit}</p><p><strong>Alcohol levels:</strong>${beer.abv}%</p><h2>Brewers tips;</h2><p>${beer.brewers_tips}</p></p><h3>Recommended food pairing:</h3> <ul class="food-pairing"></ul> `;
 
   img.src = beer.image_url;
 
