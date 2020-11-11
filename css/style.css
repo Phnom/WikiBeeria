@@ -223,6 +223,9 @@ main {
   padding: 0 10%;
 }
 @media screen and (max-width: 400px) {
+  .image-container {
+    display: none;
+  }
   .search-advanced {
     width: 90%;
   }
@@ -252,7 +255,7 @@ main {
     height: 110px;
   }
 
-  .card-content  .card-content {
+  .card-content .card-content {
     border-radius: 0;
   }
 
