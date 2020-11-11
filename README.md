@@ -3,6 +3,7 @@
 dropdowns för brewed.
 
 if för querys brewed - anpassa till datum 
+pattern - för month year
 
 
 info på stora ölkortet. foodparing. rubriker.
