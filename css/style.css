@@ -2,6 +2,8 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 :root {
@@ -222,4 +224,23 @@ main {
 }
 
 @media screen and (max-width: 400px) {
+  .search-advanced {
+    width: 90%;
+  }
+  select {
+    width: 95%;
+    margin: 5px;
+  }
+  .search-container {
+    width: 100%;
+  }
+  #search {
+    width: 100%;
+  }
+  .search-input {
+    flex-direction: column;
+  }
+  .btn {
+    margin-left: 0;
+  }
 }
