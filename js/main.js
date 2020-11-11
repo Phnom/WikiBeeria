@@ -225,14 +225,14 @@ async function searchForBeer() {
     query += `abv_gt=${abvGreatMenu.value.toLowerCase()}`;
   }
   if (brewedBeforeMenu.value.toLowerCase() !== 'brewedbefore' && query.length > 1) {
-    query += `&brewed_before=${brewedBeforeMenu.value.toLowerCase()}`;
+    query += `&brewed_before=01-${brewedBeforeMenu.value.toLowerCase()}`;
   } else if (brewedBeforeMenu.value.toLowerCase() !== 'brewedbefore') {
-    query += `brewed_before=${brewedBeforeMenu.value.toLowerCase()}`;
+    query += `brewed_before=01-${brewedBeforeMenu.value.toLowerCase()}`;
   }
   if (brewedAfterMenu.value.toLowerCase() !== 'brewedafter' && query.length > 1) {
-    query += `&brewed_after=${brewedAfterMenu.value.toLowerCase()}`;
+    query += `&brewed_after=01-${brewedAfterMenu.value.toLowerCase()}`;
   } else if (brewedAfterMenu.value.toLowerCase() !== 'brewedafter') {
-    query += `brewed_after=${brewedAfterMenu.value.toLowerCase()}`;
+    query += `brewed_after=01-${brewedAfterMenu.value.toLowerCase()}`;
   }
 
   if (query.length > 1) {
