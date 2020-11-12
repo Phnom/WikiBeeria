@@ -108,6 +108,9 @@ ul {
 .searchPageNav {
   display: flex;
 }
+.active-page {
+  color: #008fbb;
+}
 .searchPageNav > a {
   margin: 10%;
   cursor: pointer;

@@ -245,8 +245,11 @@ function createSearchNav() {
     searchNav.innerHTML += `<a href="#">${i + 1}</a>`;
   }
   const searchPagination = document.querySelectorAll('.searchPageNav > a');
+  searchPagination[0].classList.add("active-page")
   searchPagination.forEach(pageLink => {
     pageLink.addEventListener('click', () => {
+      searchPagination.forEach(Link => Link.classList.remove("active-page"))
+      pageLink.classList.add("active-page")
       clearMain();
       for (let j = 0; j < 10; j++) {
         // if = bugfix blankt resultat på sista
@@ -298,7 +301,11 @@ function createSearchResult(beer) {
 
   // Add content
   content.innerHTML = `<h1>${beer.name}</h1><p>${shortenDescription}<p>`;
-  img.src = beer.image_url;
+  if (beer.image_url) {
+    img.src = beer.image_url;
+  } else {
+    img.src = "/img/missing.png"
+  }
 
   card.addEventListener('click', () => {
     clearMain();
@@ -380,8 +387,12 @@ function beerDetails(beer) {
 
   // Add content
   content.innerHTML = `<h1>${beer.name}</h1><p>${beer.description}<p><strong>Volume:</strong>${beer.volume.value} ${beer.volume.unit}</p><p><strong>Alcohol levels:</strong>${beer.abv}%</p><h2>Brewers tips;</h2><p>${beer.brewers_tips}</p></p><h3>Recommended food pairing:</h3> <ul class="food-pairing"></ul> `;
+  if (beer.image_url) {
+    img.src = beer.image_url;
+  } else {
+    img.src = "/img/missing.png"
+  }
 
-  img.src = beer.image_url;
 
   const foods = beer.food_pairing;
   const pairingUl = document.querySelector('.food-pairing');

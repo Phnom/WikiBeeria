@@ -1,21 +1,8 @@
-404 vid start? ibland
-favicon? 
-lägg till en favicon - google
-lägg till tagg i header sökväg med bild
-rel icon
-
-tomt kort för tom sökning.
-rad 239 finns de en bättre lösning?
-
-bilden topp större?
-
-active page 123
+onload.window
 
 mobilanpassa ölsidan
-
-alt. bild vid saknad bild
-
-döp om drick
+bilden topp större?
+kebab på allt?
 
 
 # Beer Project
