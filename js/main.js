@@ -452,7 +452,7 @@ getBeer()
   // Function for shortening sentences and no wordbreak
   function shorten(str) {
     if (str.length <= 150) return str;
-    return str.substr(0, str.lastIndexOf(' ', 150) + '...');
+    return str.substr(0, str.lastIndexOf(' ', 150)) + '...';
   }
 
   //  Clears all content from the <main>
