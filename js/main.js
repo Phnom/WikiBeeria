@@ -193,50 +193,33 @@ async function searchForBeer() {
   const brewedBeforeMenu = document.querySelector('#brewedBefore').value.toLowerCase();
   const brewedAfterMenu = document.querySelector('#brewedAfter').value.toLowerCase();
 
-  let query = '?';
+  let query = '?per_page=80';
+
   if (searchInput.length > 0) {
-    query += `beer_name=${searchInput}`;
+    query += `&beer_name=${searchInput}`;
   }
-  if (hopsMenu !== 'hops' && query.length > 1) {
+  if (hopsMenu !== 'hops') {
     query += `&hops=${hopsMenu}`;
-  } else if (hopsMenu !== 'hops') {
-    query += `hops=${hopsMenu}`;
-  }
-  if (maltMenu !== 'malt' && query.length > 1) {
+  } 
+  if (maltMenu !== 'malt') {
     query += `&malt=${maltMenu}`;
-  } else if (maltMenu !== 'malt') {
-    query += `malt=${maltMenu}`;
-  }
-  if (yeastMenu !== 'yeast' && query.length > 1) {
+  } 
+  if (yeastMenu !== 'yeast') {
     query += `&yeast=${yeastMenu}`;
-  } else if (yeastMenu !== 'yeast') {
-    query += `yeast=${yeastMenu}`;
-  }
-  if (abvLessMenu !== 'abvlesser' && query.length > 1) {
+  } 
+  if (abvLessMenu !== 'abvlesser') {
     query += `&abv_lt=${abvLessMenu}`;
-  } else if (abvLessMenu !== 'abvlesser') {
-    query += `abv_lt=${abvLessMenu}`;
-  }
-  if (abvGreatMenu !== 'abvgreater' && query.length > 1) {
+  } 
+  if (abvGreatMenu !== 'abvgreater') {
     query += `&abv_gt=${abvGreatMenu}`;
-  } else if (abvGreatMenu !== 'abvgreater') {
-    query += `abv_gt=${abvGreatMenu}`;
-  }
-  if (brewedBeforeMenu !== 'brewedbefore' && query.length > 1) {
+  } 
+  if (brewedBeforeMenu !== 'brewedbefore') {
     query += `&brewed_before=01-${brewedBeforeMenu}`;
-  } else if (brewedBeforeMenu !== 'brewedbefore') {
-    query += `brewed_before=01-${brewedBeforeMenu}`;
-  }
-  if (brewedAfterMenu !== 'brewedafter' && query.length > 1) {
+  } 
+  if (brewedAfterMenu !== 'brewedafter') {
     query += `&brewed_after=01-${brewedAfterMenu}`;
-  } else if (brewedAfterMenu !== 'brewedafter') {
-    query += `brewed_after=01-${brewedAfterMenu}`;
   }
-  if (query.length > 1) {
-    query += `&per_page=80`;
-  } else {
-    query += `per_page=80`;
-  }
+  
 
   let beer = await fetchBeerData(query);
   lastSearch = beer
