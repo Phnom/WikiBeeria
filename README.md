@@ -1,4 +1,3 @@
-mobilanpassa ölsidan
 bilden topp större?
 kebab på allt?
 
