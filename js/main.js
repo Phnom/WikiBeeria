@@ -156,7 +156,7 @@ getBeer()
       searchNav.innerHTML += `<a href="#">${i + 1}</a>`;
     }
     const searchPagination = document.querySelectorAll('.search-page-nav > a');
-    if (searchPagination.length < 0) {
+    if (searchPagination.length > 0) {
       searchPagination[0].classList.add('active-page');
     } 
     searchPagination.forEach(pageLink => {
