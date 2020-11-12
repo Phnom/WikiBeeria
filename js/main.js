@@ -1,111 +1,7 @@
 function loadBeerWiki() {
-  const hops = [
-    'Fuggles',
-    'First Gold',
-    'Cascade',
-    'Amarillo',
-    'Simcoe',
-    'Motueka',
-    'Bramling Cross',
-    'Centennial',
-    'Saaz',
-    'Nelson Sauvin',
-    'Peppercorns',
-    'Tomahawk',
-    'Magnum',
-    'Hersbrucker',
-    'Honey',
-    'Lactose',
-    'Citra',
-    'Columbus Extract',
-    'Columbus',
-    'Willamette',
-    'Galena',
-    'Hop Extract',
-    'Chinook',
-    'Mt.Hood',
-    'Challenger',
-    'Waimea',
-    'Ahtanum',
-    'Crystal',
-    'Sorachi Ace',
-    'Coffee',
-    'HBC 369',
-    'Dana',
-    'Hallertauer Mittelfrüh',
-    'Kohatu',
-    'Blackberry Concentrate',
-    'Sour Cherry Puree',
-    'Mosaic',
-    'CO2 Extract',
-    'Goldings',
-    'Bobek',
-    'Ginger',
-    'Orange Peel',
-    'Mandarina Bavaria',
-    'Coffee Beans',
-    'Pacifica',
-    'Pacific Jade',
-    'Vic Secret',
-  ];
-  const malt = [
-    'Maris Otter Extra Pale',
-    'Caramalt',
-    'Munich',
-    'Propino Pale Malt',
-    'Wheat Malt',
-    'Propino Pale Malt for kettle souring',
-    'Acidulated Malt for kettle souring',
-    'Extra Pale',
-    'Dark Crystal',
-    'Lager Malt',
-    'Wheat',
-    'Chocolate',
-    'Carafa Special Malt Type 3',
-    'Acidulated Malt',
-    'Flaked Oats',
-    'Crystal',
-    'Peated Malt',
-    'Amber',
-    'Brown',
-    'Crystal 150',
-    'Pale Ale',
-    'Smoked Weyermann',
-    'Carafa Special Malt Type 1',
-    'Dark Crystal 350-400',
-    'Pale Ale - Tipple',
-    'Extra Pale - Spring Blend',
-    'Roasted Barley',
-    'Smoked Malt',
-    'Crystal 120',
-    'Honey',
-    'Rye',
-    'Pale Crystal',
-    'Weyermann Beech Smoked',
-    'Popcorn',
-    'Pale Chocolate',
-    'Torrified Wheat',
-    'Smoked Peaty',
-    'Dextrose',
-    'Black Malt',
-    'Special W',
-    'Dark Crystal 350',
-    'Black Patent',
-  ];
-  const yeast = [
-    'Wyeast 1056 - American Ale™',
-    'Wyeast 2007 - Pilsen Lager™',
-    'Wyeast 3711 - French Saison™',
-    'Wyeast 3522 - Belgian Ardennes™',
-    'Saflager S189',
-    'Wyeast 1272 - American Ale II™',
-    'Wyeast 3333 - German Wheat™',
-    'Wyeast 3638 - Bavarian Wheat™',
-    'WLP500 - Monastery Ale',
-    'Wyeast 1010 - American Wheat™',
-    'WLP099 - Super High Gravity Ale',
-    'Wyeast 3787 - Trappist High Gravity™',
-  ];
+  const hops = ["1 lemon drop chilli", "Ahtanum", "Amarillo", "American Oak Chips Heavy Toast Soaked in Bourbon", "American Oak Chips Heavy Toast soaked in Speyside Whisky", "American Oak Chips Medium Toast Soaked In Speyside Whisky", "American Oak Chips Medium Toast Soaked in Bourbon", "American Oak Chips Medium Toast soaked in Speyside Whisky", "American Oak Wood- chip medium toast, Ageing soaked in Bourbon", "American Oak Wood- chip medium toast, Ageing soaked in Rye Whisky", "Apollo", "Apricot Juice", "Ariana", "Bay Leaves", "Bitter Orange Peel", "Black Pepper", "Blackberry Concentrate", "Blackcurrant Concentrate", "Blueberries", "Blueberry Juice", "Bobek", "Bramling Cross", "Bramling Cross/ First Gold", "Bravo", "C02 Extract", "CO2 Extract", "Cacao Nibs", "Cacoa Nibs", "Callista", "Cardamon", "Cascade", "Cascara", "Centennial", "Challenger", "Chinook", "Cinnamon", "Cinnamon Powder", "Citra", "Cloudberries", "Cocoa Nibs", "Coconut Extract", "Coffee", "Coffee Beans", "Coffee beans", "Cold Brew Coffee", "Cold Infused Coffee", "Cold infused coffee", "Columbus", "Columbus Extract", "Comet", "Coriander", "Coriander Seed", "Coriander Seeds", "Coriander seed", "Crystal", "Dana", "Dark Muscavado", "Demerara Sugar", "EXP 366", "East Kent Golding", "East Kent Goldings", "El Dorado", "Elderflower", "Elderflower Concentrate", "Ella", "Enigma", "Equinox", "First Gold", "French Oak Chips Medium Toast", "Fresh Strawberries", "Fuggles", "Galaxy", "Galena", "German Cascade", "German Comet", "Ginger", "Ginger Powder", "Golden Honey", "Goldings", "Green Bullet", "Ground Coffee", "Guarana Powder", "HBC 366", "HBC 369", "Habanero", "Habanero powder", "Habenero Powder", "Hallertauer Blanc", "Hallertauer Mittelfrüh", "Heather Honey", "Hercules", "Hersbrucker", "Honey", "Hop Extract", "Huell Melon", "Idaho 7", "Jasmine", "Jester", "Juniper Berries", "Juniper Berry", "Kohatu", "Kola Nut Powder", "Lactose", "Lemon Concentrate", "Lemon Juice", "Lemon Peel", "Lemon drop chili", "Liberty", "Lingonberry Juice", "Magnum", "Mandarin Segements", "Mandarina Bavaria", "Mango", "Mango Concentrate", "Mango Puree", "Maple Syrup", "Marshmallows", "Milk Sugars", "Mosaic", "Motueka", "Mt.Hood", "Muscovado Sugar", "NZ Nelson Sauvin", "Nelson Sauvin", "Nugget", "Nutmeg", "Oak Chips", "Oat Husks", "Orange Peel", "Pacific Gem", "Pacific Hallertau", "Pacific Jade", "Pacifica", "Peach Concentrate", "Peach Juice", "Peppercorn", "Peppercorns", "Perle", "Pineapple Juice", "Pink Peppercorns", "Pioneer", "Plum Concentrate", "Poppy Seed", "Raspberry Juice", "Rosemary", "Saaz", "Saphire", "Seville Orange Juice", "Simcoe", "Sodium Chloride", "Sorachi Ace", "Sour Cherry Puree", "Spalter", "Star Anis", "Sterling", "Strisselspalt", "Styrian Goldings", "Sweet Orange Peel", "Tangerine Extract", "Tettnang", "Tomahawk", "Vanilla", "Vanilla Extract", "Vic Secret", "Waimea", "Willamette"]
+  const malt = ["Acidulated Malt", "Acidulated Malt for kettle souring", "Amber", "Bitter Orange", "Black Malt", "Black Patent", "Brown", "Cane Sugar", "CaraAroma", "Carafa Special Malt Type 1", "Carafa Special Malt Type 2", "Carafa Special Malt Type 3", "Carahell", "Caramalt", "Caramunich", "Carapils", "Carared", "Cascara", "Chocolate", "Chocolate Wheat", "Crisp Rye", "Crystal", "Crystal 120", "Crystal 150", "DRC", "Dark Crystal", "Dark Crystal 350", "Dark Crystal 350-400", "Dark Muscavado (Wort Kettle)", "Dextrin Malt", "Dextrose", "Double Roasted Crystal", "Extra Dark Crystal", "Extra Pale", "Extra Pale - Spring Blend", "Flaked Malted Oats", "Flaked Oats", "Ginger Root", "Golden Naked Oats", "Grano Dei Miracoli", "Grapefruit Peel", "Honey", "Lactose", "Lager Malt", "Light Crystal", "Maris Otter", "Maris Otter Extra Pale", "Medium Crystal", "Munich", "Munich Type 1 Light", "Oat Husks", "Organic Caramalt", "Organic Chocolate", "Organic Lager", "Organic Munich", "Pale Ale", "Pale Ale - Tipple", "Pale Chocolate", "Pale Crystal", "Pale Crystal 60", "Peated Malt", "Pilsner", "Pinhead Oats", "Popcorn", "Premium English Caramalt", "Propino Pale Malt", "Propino Pale Malt for kettle souring", "Roasted Barley", "Roasted Malt", "Rye", "Simpsons Rye", "Smoked Malt", "Smoked Peaty", "Smoked Warminster", "Smoked Weyermann", "Special W", "Spelt", "Sweet Orange Peel", "Torrified Wheat", "Uncrushed Wheat", "Vienna", "Weyermann Beech Smoked", "Weyermann Smoked", "Weyermann Special III", "Wheat", "Wheat Malt", "White Cane Sugar", "White Wheat"]
+  const yeast = ["Champagne", "Safale US-05", "Saflager S189", "Saflager W-34/70", "WLP013 - London Ale", "WLP099 - Super High Gravity Ale", "WLP351 - Bavarian Weizen", "WLP4000 - Vermont Ale", "WLP500 - Monastery Ale", "Westvleteren 12 (recovered from a bottle)", "Wyeast 1010 - American Wheat™", "Wyeast 1056 - American Ale™", "Wyeast 1056 - American Ale™ & Wyeast 1272 - American Ale II™", "Wyeast 1272 - American Ale II™", "Wyeast 1388 - Belgian Strong Ale™", "Wyeast 2007 - Pilsen Lager™", "Wyeast 2124 - Bohemian Lager™", "Wyeast 2126 - Bohemian Lager™", "Wyeast 3333 - German Wheat™", "Wyeast 3522 - Belgian Ardennes™", "Wyeast 3638 - Bavarian Wheat™", "Wyeast 3711 - French Saison™", "Wyeast 3724 - Belgian Saison™", "Wyeast 3787 - Trappist High Gravity™", "Wyeast 3944 - Belgian Witbier™"]
   let lastSearch = [];
 
   // Dropdown menus
@@ -134,6 +30,7 @@ function loadBeerWiki() {
   }
 
   renderDropdowns();
+
   /***********************
 
         API-fetch
@@ -148,17 +45,20 @@ function loadBeerWiki() {
   }
   // API-fetch ENDS //
 
-  /*
-function för att leta data ta bort sen
+  //funktion för att söka data till bärs i konstruktion av sidan
+/* 
 async function getBeer() {
   const temp = []
-  const beers = await fetchBeerData("?per_page=80")
-  console.log(beers)
+  const beers = await fetchBeerData("?page=7&per_page=80")
+  console.log(yeast)
   for (let current of beers) {
-    if (!yeast.includes(current.ingredients.yeast)) {
-        temp.push(current.ingredients.yeast)
+    //for (c of current.ingredients.malt) {
+      if (!yeast.includes(current.name) && !temp.includes(current.ingredients.yeast.name)) {
+        temp.push(current.ingredients.yeast.name)
+    //}
     }
   }
+  yeast.forEach(hop => temp.push(hop))
   console.log(temp)
 }
 getBeer()
@@ -169,6 +69,7 @@ getBeer()
   searchBtn.addEventListener('click', () => {
     clearMain();
     searchForBeer();
+    document.querySelectorAll('.search-advanced > select').forEach(opt => opt.selectedIndex = 0)
   });
 
   document.querySelector('.search').addEventListener('keypress', function (e) {
@@ -177,6 +78,7 @@ getBeer()
     if (e.key === 'Enter') {
       clearMain();
       searchForBeer();
+      document.querySelectorAll('.search-advanced > select').forEach(opt => opt.selectedIndex = 0)
     }
   });
 
