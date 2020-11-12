@@ -105,7 +105,7 @@ const yeast = [
   'WLP099 - Super High Gravity Ale',
   'Wyeast 3787 - Trappist High Gravity™',
 ];
-let lastSearch = []
+let lastSearch = [];
 
 // Dropdown menus
 function renderDropdowns() {
@@ -189,10 +189,15 @@ async function searchForBeer() {
   const maltMenu = document.querySelector('#malt').value.toLowerCase();
   const yeastMenu = document.querySelector('#yeast').value.toLowerCase();
   const abvLessMenu = document.querySelector('#abvLesser').value.toLowerCase();
-  const abvGreatMenu = document.querySelector('#abvGreater').value.toLowerCase();
-  const brewedBeforeMenu = document.querySelector('#brewedBefore').value.toLowerCase();
-  const brewedAfterMenu = document.querySelector('#brewedAfter').value.toLowerCase();
-
+  const abvGreatMenu = document
+    .querySelector('#abvGreater')
+    .value.toLowerCase();
+  const brewedBeforeMenu = document
+    .querySelector('#brewedBefore')
+    .value.toLowerCase();
+  const brewedAfterMenu = document
+    .querySelector('#brewedAfter')
+    .value.toLowerCase();
 
   let query = '?per_page=80';
 
@@ -201,59 +206,61 @@ async function searchForBeer() {
   }
   if (hopsMenu !== 'hops') {
     query += `&hops=${hopsMenu}`;
-  } 
+  }
   if (maltMenu !== 'malt') {
     query += `&malt=${maltMenu}`;
-  } 
+  }
   if (yeastMenu !== 'yeast') {
     query += `&yeast=${yeastMenu}`;
-  } 
+  }
   if (abvLessMenu !== 'abvlesser') {
     query += `&abv_lt=${abvLessMenu}`;
-  } 
+  }
   if (abvGreatMenu !== 'abvgreater') {
     query += `&abv_gt=${abvGreatMenu}`;
-  } 
+  }
   if (brewedBeforeMenu !== 'brewedbefore') {
     query += `&brewed_before=01-${brewedBeforeMenu}`;
-  } 
+  }
   if (brewedAfterMenu !== 'brewedafter') {
     query += `&brewed_after=01-${brewedAfterMenu}`;
   }
   if (query.length > 12) {
     let beer = await fetchBeerData(query);
-    lastSearch = beer
-    createSearchNav()
-  
+    lastSearch = beer;
+    createSearchNav();
+
     for (let i = 0; i < 10; i++) {
       if (beer[i] !== undefined) {
         createSearchResult(beer[i]);
       }
     }
   } else {
-    let input = document.querySelector("#search") 
-    input.placeholder = "it's empty"
+    let input = document.querySelector('#search');
+    input.classList.add('active');
+    input.placeholder = 'Search can not be empty..';
+    input.style.border = '2px solid red';
   }
 }
 
 function createSearchNav() {
-  const searchNav = document.querySelector(".searchPageNav")
-  searchNav.innerHTML = ""
+  const searchNav = document.querySelector('.searchPageNav');
+  searchNav.innerHTML = '';
   for (let i = 0; i < Math.ceil(lastSearch.length / 10); i++) {
-    searchNav.innerHTML += `<a href="#">${i + 1}</a>`
+    searchNav.innerHTML += `<a href="#">${i + 1}</a>`;
   }
-  const searchPagination = document.querySelectorAll(".searchPageNav > a")
+  const searchPagination = document.querySelectorAll('.searchPageNav > a');
   searchPagination.forEach(pageLink => {
-    pageLink.addEventListener("click", () => {
-      clearMain()
+    pageLink.addEventListener('click', () => {
+      clearMain();
       for (let j = 0; j < 10; j++) {
         // if = bugfix blankt resultat på sista
         if (lastSearch[(pageLink.innerText - 1) * 10 + j] !== undefined) {
           createSearchResult(lastSearch[(pageLink.innerText - 1) * 10 + j]);
         }
       }
-    })
-  })
+    });
+  });
 }
 
 function createSearchResult(beer) {
@@ -342,37 +349,37 @@ function beerDetails(beer) {
   CreateHopsUl.className = 'ingredients-hops';
   rightAside.append(CreateHopsUl);
 
-  const hopsHeadline = document.createElement("h3")
-  CreateHopsUl.append(hopsHeadline)
+  const hopsHeadline = document.createElement('h3');
+  CreateHopsUl.append(hopsHeadline);
 
   const CreateMaltsUl = document.createElement('ul');
   CreateMaltsUl.className = 'ingredients-malts';
   rightAside.append(CreateMaltsUl);
 
-  const maltHeadline = document.createElement("h3")
-  CreateMaltsUl.append(maltHeadline)
+  const maltHeadline = document.createElement('h3');
+  CreateMaltsUl.append(maltHeadline);
 
   const createYeastsUl = document.createElement('ul');
   createYeastsUl.className = 'ingredients-yeasts';
   rightAside.append(createYeastsUl);
 
-  const yeastHeadline = document.createElement("h3")
-  createYeastsUl.append(yeastHeadline)
+  const yeastHeadline = document.createElement('h3');
+  createYeastsUl.append(yeastHeadline);
 
   /** Html-structure  ends **/
 
   const hops = beer.ingredients.hops;
-  const hopsUl = document.querySelector('.ingredients-hops')
-  hopsHeadline.innerHTML = "Hops:";
+  const hopsUl = document.querySelector('.ingredients-hops');
+  hopsHeadline.innerHTML = 'Hops:';
   getIngredients(hops, hopsUl);
 
   const malts = beer.ingredients.malt;
   const maltsUl = document.querySelector('.ingredients-malts');
-  maltHeadline.innerHTML = "Malt:"
+  maltHeadline.innerHTML = 'Malt:';
   getIngredients(malts, maltsUl);
 
   const yeasts = beer.ingredients.yeast;
-  yeastHeadline.innerHTML = "Yeast:"
+  yeastHeadline.innerHTML = 'Yeast:';
   const yeastsUl = document.querySelector('.ingredients-yeasts');
   getIngredients(yeasts, yeastsUl);
 
@@ -381,14 +388,14 @@ function beerDetails(beer) {
 
   img.src = beer.image_url;
 
-  const foods = beer.food_pairing
-  const pairingUl = document.querySelector('.food-pairing')
+  const foods = beer.food_pairing;
+  const pairingUl = document.querySelector('.food-pairing');
 
   // Adds recommended foods to <ul>
-  foodPairing(foods)
+  foodPairing(foods);
   function foodPairing(foods) {
     for (const food of foods) {
-      addItemtoUl(food, pairingUl)
+      addItemtoUl(food, pairingUl);
     }
   }
 

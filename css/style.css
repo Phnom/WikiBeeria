@@ -131,6 +131,10 @@ ul {
   font-size: 0.9rem;
 }
 
+.active::placeholder {
+  color: red;
+}
+
 .btn {
   height: 50px;
   padding: 0 40px;
@@ -258,7 +262,6 @@ main {
     height: 110px;
     text-align: center;
   }
-
 
   .card-content .card-content {
     border-radius: 0;
