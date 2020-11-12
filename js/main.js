@@ -193,6 +193,7 @@ async function searchForBeer() {
   const brewedBeforeMenu = document.querySelector('#brewedBefore').value.toLowerCase();
   const brewedAfterMenu = document.querySelector('#brewedAfter').value.toLowerCase();
 
+
   let query = '?per_page=80';
 
   if (searchInput.length > 0) {
@@ -219,16 +220,19 @@ async function searchForBeer() {
   if (brewedAfterMenu !== 'brewedafter') {
     query += `&brewed_after=01-${brewedAfterMenu}`;
   }
+  if (query.length > 12) {
+    let beer = await fetchBeerData(query);
+    lastSearch = beer
+    createSearchNav()
   
-
-  let beer = await fetchBeerData(query);
-  lastSearch = beer
-  createSearchNav()
-
-  for (let i = 0; i < 10; i++) {
-    if (beer[i] !== undefined) {
-      createSearchResult(beer[i]);
+    for (let i = 0; i < 10; i++) {
+      if (beer[i] !== undefined) {
+        createSearchResult(beer[i]);
+      }
     }
+  } else {
+    let input = document.querySelector("#search") 
+    input.placeholder = "it's empty"
   }
 }
 
