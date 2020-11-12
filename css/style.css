@@ -259,6 +259,11 @@ main {
     margin-left: 0;
   }
 
+  .card {
+    width: 100%;
+    grid-template-columns: repeat(1, 100%);
+  }
+
   .card-small {
     display: grid;
     align-content: center;
