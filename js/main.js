@@ -109,9 +109,9 @@ let lastSearch = [];
 
 // Dropdown menus
 function renderDropdowns() {
-  const hopsMenu = document.querySelector('#hops');
-  const maltMenu = document.querySelector('#malt');
-  const yeastMenu = document.querySelector('#yeast');
+  const hopsMenu = document.querySelector('.hops');
+  const maltMenu = document.querySelector('.malt');
+  const yeastMenu = document.querySelector('.yeast');
   hops.forEach(item => {
     const hopsOption = document.createElement('option');
     hopsOption.innerText = item;
