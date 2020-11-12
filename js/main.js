@@ -397,7 +397,7 @@ getBeer()
     getIngredients(yeasts, yeastsUl);
 
     // Add content
-    content.innerHTML = `<h1>${beer.name}</h1><p>${beer.description}<p><strong>Volume:</strong>${beer.volume.value} ${beer.volume.unit}</p><p><strong>Alcohol levels:</strong>${beer.abv}%</p><h2>Brewers tips;</h2><p>${beer.brewers_tips}</p></p><h3>Recommended food pairing:</h3> <ul class="food-pairing"></ul> `;
+    content.innerHTML = `<h1>${beer.name}</h1><p>${beer.description}<p><strong>Volume: </strong>${beer.volume.value} ${beer.volume.unit}</p><p><strong>Alcohol content: </strong>${beer.abv}%</p><h2>Brewers tips;</h2><p>${beer.brewers_tips}</p></p><h3>Recommended food pairing:</h3> <ul class="food-pairing"></ul> `;
     if (beer.image_url) {
       img.src = beer.image_url;
     } else {
