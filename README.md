@@ -11,7 +11,7 @@ mobilanpassa ölsidan
 
 alt. bild vid saknad bild
 
-
+byt ut alla id mot class
 
 
 # Beer Project

@@ -170,7 +170,7 @@ searchBtn.addEventListener('click', () => {
   searchForBeer();
 });
 
-document.getElementById('search').addEventListener('keypress', function (e) {
+document.querySelector('.search').addEventListener('keypress', function (e) {
   // let searchInput = document.getElementById('search');
   // const main = document.querySelector('main');
   if (e.key === 'Enter') {
@@ -184,20 +184,15 @@ document.getElementById('search').addEventListener('keypress', function (e) {
 /*********************** Functions ***********************/
 
 async function searchForBeer() {
-  let searchInput = document.getElementById('search').value.toLowerCase();
-  const hopsMenu = document.querySelector('#hops').value.toLowerCase();
-  const maltMenu = document.querySelector('#malt').value.toLowerCase();
-  const yeastMenu = document.querySelector('#yeast').value.toLowerCase();
-  const abvLessMenu = document.querySelector('#abvLesser').value.toLowerCase();
-  const abvGreatMenu = document
-    .querySelector('#abvGreater')
-    .value.toLowerCase();
-  const brewedBeforeMenu = document
-    .querySelector('#brewedBefore')
-    .value.toLowerCase();
-  const brewedAfterMenu = document
-    .querySelector('#brewedAfter')
-    .value.toLowerCase();
+  let searchInput = document.querySelector('.search').value.toLowerCase();
+  const hopsMenu = document.querySelector('.hops').value.toLowerCase();
+  const maltMenu = document.querySelector('.malt').value.toLowerCase();
+  const yeastMenu = document.querySelector('.yeast').value.toLowerCase();
+  const abvLessMenu = document.querySelector('.abvLesser').value.toLowerCase();
+  const abvGreatMenu = document.querySelector('.abvGreater').value.toLowerCase();
+  const brewedBeforeMenu = document.querySelector('.brewedBefore').value.toLowerCase();
+  const brewedAfterMenu = document.querySelector('.brewedAfter').value.toLowerCase();
+  let input = document.querySelector('.search');
 
   let query = '?per_page=80';
 
@@ -226,6 +221,8 @@ async function searchForBeer() {
     query += `&brewed_after=01-${brewedAfterMenu}`;
   }
   if (query.length > 12) {
+    input.classList.remove('active');
+    input.placeholder = 'Find your beer...';
     let beer = await fetchBeerData(query);
     lastSearch = beer;
     createSearchNav();
@@ -236,10 +233,8 @@ async function searchForBeer() {
       }
     }
   } else {
-    let input = document.querySelector('#search');
     input.classList.add('active');
     input.placeholder = 'Search can not be empty..';
-    input.style.border = '2px solid red';
   }
 }
 

@@ -118,7 +118,7 @@ ul {
   display: flex;
   width: 80%;
 }
-#search {
+.search {
   color: #000;
   height: 50px;
   width: 80%;
@@ -133,6 +133,9 @@ ul {
 
 .active::placeholder {
   color: red;
+}
+.active {
+  border: 2px solid red;
 }
 
 .btn {
@@ -243,7 +246,7 @@ main {
   .search-container {
     width: 100%;
   }
-  #search {
+  .search {
     width: 100%;
   }
   .search-input {
