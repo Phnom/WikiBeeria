@@ -1,4 +1,8 @@
 404 vid start? ibland
+favicon? 
+lägg till en favicon - google
+lägg till tagg i header sökväg med bild
+rel icon
 
 tomt kort för tom sökning.
 rad 239 finns de en bättre lösning?
@@ -11,7 +15,7 @@ mobilanpassa ölsidan
 
 alt. bild vid saknad bild
 
-byt ut alla id mot class
+döp om drick
 
 
 # Beer Project

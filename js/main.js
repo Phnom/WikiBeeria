@@ -294,7 +294,7 @@ function createSearchResult(beer) {
   /** Html-structure  ends **/
 
   //Shorten the beer description to fit inside the "card"-element
-  const shortenDescription = shorten(beer.description, 150, ' ') + '...';
+  const shortenDescription = shorten(beer.description);
 
   // Add content
   content.innerHTML = `<h1>${beer.name}</h1><p>${shortenDescription}<p>`;
@@ -429,9 +429,9 @@ function addItemtoUl(item, nameOfUl) {
 }
 
 // Function for shortening sentences and no wordbreak
-function shorten(str, maxNumOfChar, separator = ' ') {
-  if (str.length <= maxNumOfChar) return str;
-  return str.substr(0, str.lastIndexOf(separator, maxNumOfChar));
+function shorten(str) {
+  if (str.length <= 150) return str;
+  return str.substr(0, str.lastIndexOf(' ', 150) + '...');
 }
 
 //  Clears all content from the <main>
