@@ -248,12 +248,12 @@ getBeer()
   }
 
   function createSearchNav() {
-    const searchNav = document.querySelector('.searchPageNav');
+    const searchNav = document.querySelector('.search-page-nav');
     searchNav.innerHTML = '';
     for (let i = 0; i < Math.ceil(lastSearch.length / 10); i++) {
       searchNav.innerHTML += `<a href="#">${i + 1}</a>`;
     }
-    const searchPagination = document.querySelectorAll('.searchPageNav > a');
+    const searchPagination = document.querySelectorAll('.search-page-nav > a');
     searchPagination[0].classList.add('active-page');
     searchPagination.forEach(pageLink => {
       pageLink.addEventListener('click', () => {

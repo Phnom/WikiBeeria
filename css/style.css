@@ -100,18 +100,18 @@ ul {
   background-color: rgba(255, 255, 255, 0.911);
   border-radius: 0.25vh;
 }
-.search-Navigations {
+.search-navigations {
   display: flex;
   width: 100%;
   justify-content: space-between;
 }
-.searchPageNav {
+.search-page-nav {
   display: flex;
 }
 .active-page {
   color: #008fbb;
 }
-.searchPageNav > a {
+.search-page-nav > a {
   margin: 10%;
   cursor: pointer;
   font-size: 0.9rem;

@@ -1,6 +1,3 @@
-bilden topp större?
-kebab på allt?
-
 # Beer Project
 
 ## Instruktioner
