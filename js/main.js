@@ -313,7 +313,7 @@ getBeer()
     if (beer.image_url) {
       img.src = beer.image_url;
     } else {
-      img.src = '/img/missing.png';
+      img.src = 'img/missing.png';
     }
 
     card.addEventListener('click', () => {
@@ -399,7 +399,7 @@ getBeer()
     if (beer.image_url) {
       img.src = beer.image_url;
     } else {
-      img.src = '/img/missing.png';
+      img.src = 'img/missing.png';
     }
 
     const foods = beer.food_pairing;
