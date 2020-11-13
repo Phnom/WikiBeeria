@@ -135,6 +135,18 @@ getBeer()
       input.classList.remove('active');
       input.placeholder = 'Find your beer...';
       let beer = await fetchBeerData(query);
+
+// lösning för mer än 80
+      let newQuery
+      let newBeer = beer
+      let count = 1
+      while (newBeer.length === 80) {
+        newQuery = query + "&page=" + count
+        newBeer = await fetchBeerData(newQuery);
+        newBeer.forEach(nBeer => beer.push(nBeer))
+        count++
+      }
+
       lastSearch = beer;
       createSearchNav();
 
