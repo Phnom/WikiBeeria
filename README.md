@@ -1,5 +1,8 @@
-/img/favicon.ico:1 Failed to load resource: the server responded with a status of 404 ()
-GET https://phnom.github.io/img/missing.png 404 missing.png:1 
+# Link to a demo below
+
+https://phnom.github.io/WikiBeeria/
+
+
 # Beer Project
 
 ## Instruktioner
