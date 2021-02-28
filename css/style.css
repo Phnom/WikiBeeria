@@ -107,13 +107,18 @@ ul {
   justify-content: space-between;
 }
 .search-page-nav {
+  width: 80%;
   display: flex;
+  flex: 1 1 auto;
+  flex-flow: wrap;
+  justify-content: center;
+  align-content: center;
 }
 .active-page {
   color: #008fbb;
 }
 .search-page-nav > a {
-  margin: 10%;
+  margin: 2% 1%;
   cursor: pointer;
   font-size: 0.9rem;
 }
